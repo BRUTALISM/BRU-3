@@ -9,12 +9,13 @@
 ;;
 
 (def config
-  {:bone-count 7
+  {:bone-count 8
    :distance-bounds [90 150]
    :length-bounds [60 120]
    :max-angle 30})
 
 (defn new-bones []
+  ;; the first bone is a zero-bone, so we take the rest of 'em
   {:bones (rest (take (:bone-count config)
                       (b/gen-bones (:distance-bounds config) (:length-bounds config) (:max-angle config))))})
 
