@@ -1,5 +1,4 @@
-(ns bru-3.bones
-  (:require [thi.ng.geom.core.vector :as v]))
+(ns bru-3.bones)
 
 (def zero-bone
   {:position 0.0
@@ -21,7 +20,17 @@
   ([distance-bounds length-bounds max-angle prev-bone]
     (iterate (partial bone distance-bounds length-bounds max-angle) prev-bone)))
 
-;(defn bone
-;  ([] [(v/vec2) (v/vec2)])
-;  ([v1 v2] [(v/vec2 v1) (v/vec2 v2)])
-;  ([x1 y1 x2 y2] [(v/vec2 x1 y1) (v/vec2 x2 y2)]))
+(defn lerp-bones [b1 b2 t]
+  "Lerps all bone values from bone b1's values to bone b2's values using a given lerp factor t."
+  (let [lerp (fn [from to t] (+ from (* (- to from) t)))]
+    (reduce #(assoc %1 %2 (lerp (%2 b1) (%2 b2) t)) {} (keys b1))))
+
+(defn bone-endpoints [b ybase]
+  (let [{:keys position} b
+        xdist (* (/ length 2) (Math/sin (Math/toRadians angle)))
+        ydist (* (/ length 2) (Math/cos (Math/toRadians angle)))
+        x1 (- position xdist)
+        y1 (- ybase ydist)
+        x2 (+ position xdist)
+        y2 (+ ybase ydist)]
+    [x1 y1 x2 y2]))

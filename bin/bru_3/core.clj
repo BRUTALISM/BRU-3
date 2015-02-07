@@ -22,12 +22,7 @@
 (defn draw-bone [b]
   (let [{:keys [position angle length]} b
         ybase (/ (q/height) 2)
-        xdist (* (/ length 2) (Math/sin (Math/toRadians angle)))
-        ydist (* (/ length 2) (Math/cos (Math/toRadians angle)))
-        x1 (- position xdist)
-        y1 (- ybase ydist)
-        x2 (+ position xdist)
-        y2 (+ ybase ydist)
+        [x1 y1 x2 y2] (b/bone-endpoints b ybase)
         dot-size 5]
     (q/line x1 y1 x2 y2)
     (q/ellipse x1 y1 dot-size dot-size)
