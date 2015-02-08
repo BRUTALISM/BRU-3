@@ -9,14 +9,14 @@
 ;;
 
 (def config
-  {:bone-count 8
-   :distance-bounds [90 150]
-   :length-bounds [60 120]
-   :max-angle 30})
+  {:bone-count 9
+   :distance-bounds [40 140]
+   :length-bounds [250 350]
+   :max-angle 10})
 
 (defn new-bones []
   ;; the first bone is a zero-bone, so we take the rest of 'em
-  {:bones (rest (take (:bone-count config)
+  {:bones (rest (take (+ 1 (:bone-count config))
                       (b/gen-bones (:distance-bounds config) (:length-bounds config) (:max-angle config))))})
 
 (defn draw-bone [b]
@@ -33,11 +33,13 @@
 ;;
 
 (defn setup []
-  (q/frame-rate 1)
+  (q/frame-rate 10)
   (new-bones))
 
 (defn update [state]
-  (new-bones))
+  (if (and (q/key-pressed?) (= :a (q/key-as-keyword)))
+    (new-bones)
+    state))
 
 (defn draw [state]
   (q/background 0)
@@ -47,7 +49,7 @@
 
 (q/defsketch bru-3
   :title "BRU-3"
-  :size [1000 200]
+  :size [1100 600]
   :setup setup
   :update update
   :draw draw

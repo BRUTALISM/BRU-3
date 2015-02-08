@@ -26,7 +26,7 @@
     (reduce #(assoc %1 %2 (lerp (%2 b1) (%2 b2) t)) {} (keys b1))))
 
 (defn bone-endpoints [b ybase]
-  (let [{:keys position} b
+  (let [{:keys [position length angle]} b
         xdist (* (/ length 2) (Math/sin (Math/toRadians angle)))
         ydist (* (/ length 2) (Math/cos (Math/toRadians angle)))
         x1 (- position xdist)
