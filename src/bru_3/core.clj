@@ -2,7 +2,8 @@
   (:require [quil.core :as q]
             [quil.middleware :as m]
             [thi.ng.geom.core.vector :as v]
-            [bru-3.bones :as b]))
+            [bru-3.bone :as b]
+            [bru-3.decomposition :as d]))
 
 ;;
 ;; Processing-specific display code
@@ -15,14 +16,16 @@
    :max-angle 10})
 
 (defn new-bones []
-  ;; the first bone is a zero-bone, so we take the rest of 'em
-  {:bones (rest (take (+ 1 (:bone-count config))
-                      (b/gen-bones (:distance-bounds config) (:length-bounds config) (:max-angle config))))})
+  (let [initial-bone (bru_3.bone.Bone. (v/vec2 0.0 (/ (q/height) 2)) 0.0 0.0)]
+    ;; the first bone is the initial-bone, so we take the rest of 'em
+    {:bones (rest (take (+ 1 (:bone-count config))
+                        (b/gen-bones (:distance-bounds config)
+                                     (:length-bounds config)
+                                     (:max-angle config)
+                                     initial-bone)))}))
 
 (defn draw-bone [b]
-  (let [{:keys [position angle length]} b
-        ybase (/ (q/height) 2)
-        [x1 y1 x2 y2] (b/bone-endpoints b ybase)
+  (let [[[x1 y1] [x2 y2]] (d/vertices b)
         dot-size 5]
     (q/line x1 y1 x2 y2)
     (q/ellipse x1 y1 dot-size dot-size)
