@@ -14,8 +14,8 @@
   {;; algo
    :bone-count 9
    :distance-bounds [40 140]
-   :length-bounds [250 350]
-   :max-angle 10
+   :length-bounds [120 140]
+   :max-angle 20
    :frame-bone-randomization 0.6
    
    ;; presentation
@@ -24,7 +24,7 @@
 (defn new-bones []
   (let [initial-bone (bru_3.bone.Bone. (v/vec2 0.0 (/ (q/height) 2)) 0.0 0.0)]
     ;; the first bone is the initial-bone, so we take the rest of 'em
-    (rest (take (+ 1 (:bone-count config))
+    (rest (take (inc (:bone-count config))
                 (b/gen-bones (:distance-bounds config)
                              (:length-bounds config)
                              (:max-angle config)
@@ -61,13 +61,11 @@
 ;;
 
 (defn setup []
-  (q/frame-rate 5)
+  (q/frame-rate 10)
   (new-state))
 
 (defn update [state]
-  (if (and (q/key-pressed?) (= :a (q/key-as-keyword)))
-    (new-state)
-    state))
+  state)
 
 (defn draw [state]
   (q/background 0)
@@ -76,10 +74,16 @@
   (doseq [bone (:bones state)] (draw-bone bone))
   (doseq [frame (:frames state)] (draw-frame frame)))
 
+(defn key-pressed [state key-info]
+  (case (:key key-info)
+    :a (new-state)
+    state))
+
 (q/defsketch bru-3
   :title "BRU-3"
   :size [1100 600]
   :setup setup
   :update update
   :draw draw
+  :key-pressed key-pressed
   :middleware [m/fun-mode])
