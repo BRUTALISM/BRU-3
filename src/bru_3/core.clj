@@ -68,11 +68,20 @@
   state)
 
 (defn draw [state]
-  (q/background 0)
-  (q/fill 255 255 255)
-  (q/stroke 255 255 255)
-  (doseq [bone (:bones state)] (draw-bone bone))
-  (doseq [frame (:frames state)] (draw-frame frame)))
+  (let [bones (:bones state)
+        [fx _] (:position (first bones))
+        [lx _] (:position (last bones))
+        sw (q/width)
+        lw (- lx fx)
+        xoff (- (/ (- sw lw) 2) fx)]
+    (q/background 0)
+    (q/fill 255 255 255)
+    (q/stroke 255 255 255)
+    (q/push-matrix)
+    (q/translate xoff 0)
+    (doseq [bone bones] (draw-bone bone))
+    (doseq [frame (:frames state)] (draw-frame frame))
+    (q/pop-matrix)))
 
 (defn key-pressed [state key-info]
   (case (:key key-info)
