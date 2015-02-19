@@ -14,12 +14,11 @@
   vertices. r is given as a percentage in the [0, 1] range. When r = 0, there'll be no vertex randomization, and the
   frame will fit exactly between the two bones. For any other value, a random percentage will be added or subtracted
   from the bone lengths, and the frame will be constructed using the resulting shortened/elongated bones."
-  [b1 b2 r]
-  (let [;; make a function for getting randomized length in [-rp, rp] range
-        rand-range (fn [min max] (+ min (rand (- max min))))
-        rfn (fn [] (rand-range (- r) r))
-        ;; randomize each bone length
-        rb1 (update-in b1 [:length] * (rfn))
-        rb2 (update-in b2 [:length] * (rfn))]
-    ;; TODO: Continue here.
-    ))
+  [r b1 b2]
+  (let [rand-range (fn [min max] (+ min (rand (- max min))))
+        rfn #(rand-range (- r) r)
+        rb1 (update-in b1 [:length] * (+ 1 (rfn)))
+        rb2 (update-in b2 [:length] * (+ 1 (rfn)))
+        [b1u b1d] (d/vertices rb1)
+        [b2u b2d] (d/vertices rb2)]
+    (Frame. b1u b2u b1d b2d)))
