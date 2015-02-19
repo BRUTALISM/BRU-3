@@ -12,8 +12,8 @@
 
 (def config
   {;; algo
-   :bone-count 9
-   :distance-bounds [40 140]
+   :bone-count 10
+   :distance-bounds [60 120]
    :length-bounds [120 140]
    :max-angle 20
    :frame-bone-randomization 0.6
