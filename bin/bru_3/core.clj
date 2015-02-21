@@ -14,12 +14,14 @@
   {;; algo
    :bone-count 10
    :distance-bounds [100 120]
-   :length-bounds [100 120]
-   :max-angle 30
+   :length-bounds [20 130]
+   :max-angle 20
    :frame-bone-randomization 0.4
    
    ;; presentation
-   :dot-size 5})
+   :dot-size 5
+   :draw-bones true
+   :draw-frames true})
 
 (defn new-bones []
   (let [initial-bone (bru_3.bone.Bone. (v/vec2 0.0 (/ (q/height) 2)) 0.0 0.0)]
@@ -80,8 +82,10 @@
     (q/stroke 255 255 255)
     (q/push-matrix)
     (q/translate xoff 0)
-    (doseq [bone bones] (draw-bone bone))
-    (doseq [frame (:frames state)] (draw-frame frame))
+    (when (:draw-bones config)
+      (doseq [bone bones] (draw-bone bone)))
+    (when (:draw-frames config)
+      (doseq [frame (:frames state)] (draw-frame frame)))
     (q/pop-matrix)))
 
 (defn key-pressed [state key-info]
