@@ -14,18 +14,32 @@
 
 (def zero-bone (Bone. (v/vec2 0.0 0.0) 0.0 0.0))
 
-(defn bone [distance-bounds length-bounds max-angle prev-bone]
-  (let [{:keys [position angle]} prev-bone
-        [min-dist max-dist] distance-bounds
-        [min-length max-length] length-bounds
-        rand-range (fn [min max] (+ min (rand (- max min))))]
+(defn bone
+  "Creates a new bone based on a previous bone b and randomization parameters
+  db, lb, and amax. db (distance bounds) is a pair of values representing the
+  minimum and maximum values for the new bone's distance from the previous bone.
+  lb is a pair representing minimum and maximum for the new bone's length.
+  amax is the upper bound (the lower being -amax) on the angle between the
+  previous bone b and the newly created bone."
+  [db lb amax b]
+  (let [{:keys [position angle]} b
+        [dmin dmax] db
+        [lmin lmax] lb
+        rand-range (fn [minn maxx] (+ minn (rand (- maxx minn))))]
     (Bone.
-      (g/+ position (v/vec2 (rand-range min-dist max-dist) 0.0))
-      (+ angle (rand-range (- max-angle) max-angle))
-      (rand-range min-length max-length))))
+      (g/+ position (v/vec2 (rand-range dmin dmax) 0.0))
+      (+ angle (rand-range (- amax) amax))
+      (rand-range lmin lmax))))
 
 (defn gen-bones
-  ([distance-bounds length-bounds max-angle]
-    (gen-bones distance-bounds length-bounds max-angle zero-bone))
-  ([distance-bounds length-bounds max-angle prev-bone]
-    (iterate (partial bone distance-bounds length-bounds max-angle) prev-bone)))
+  "Returns a lazy collection of bones based on the given randomization
+  parameters db, lb, and amax, and a previous bone b. If b is omitted, zero-bone
+  is used. db (distance bounds) is a pair of values representing the minimum and
+  maximum values for the new bone's distance from the previous bone. lb is a
+  pair representing minimum and maximum for the new bone's length. amax is the
+  upper bound (the lower being -amax) on the angle between the previous bone b
+  and the newly created bone."
+  ([db lb amax]
+    (gen-bones db lb amax zero-bone))
+  ([db lb amax b]
+    (iterate (partial bone db lb amax) b)))

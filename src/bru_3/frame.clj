@@ -10,10 +10,13 @@
       (map edge pairs))))
 
 (defn from-bones
-  "Creates a frame in between the two given bones b1 and b2, using the randomization maximum r to offset the bone
-  vertices. r is given as a percentage in the [0, 1] range. When r = 0, there'll be no vertex randomization, and the
-  frame will fit exactly between the two bones. For any other value, a random percentage will be added or subtracted
-  from the bone lengths, and the frame will be constructed using the resulting shortened/elongated bones."
+  "Creates a frame in between the two given bones b1 and b2, using the
+  randomization maximum r to offset the bone vertices. r is given as a
+  percentage in the [0, 1] range. When r = 0, there'll be no vertex
+  randomization, and the frame will fit exactly between the two bones. For any
+  other value, a random percentage will be added or subtracted from the bone
+  lengths, and the frame will be constructed using the resulting
+  shortened/elongated bones."
   [r b1 b2]
   (let [rand-range (fn [min max] (+ min (rand (- max min))))
         rfn #(rand-range (- r) r)

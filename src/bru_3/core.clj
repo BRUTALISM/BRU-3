@@ -13,10 +13,10 @@
 (def config
   {;; algo
    :bone-count 10
-   :distance-bounds [60 120]
-   :length-bounds [120 140]
-   :max-angle 20
-   :frame-bone-randomization 0.6
+   :distance-bounds [100 120]
+   :length-bounds [100 120]
+   :max-angle 30
+   :frame-bone-randomization 0.4
    
    ;; presentation
    :dot-size 5})
@@ -31,8 +31,9 @@
                              initial-bone)))))
 
 (defn new-frames [bones]
-  (let [bone-pairs (map vector bones (rest bones))]
-    (map (partial apply (partial f/from-bones (:frame-bone-randomization config))) bone-pairs)))
+  (let [bone-pairs (map vector bones (rest bones))
+        bf (partial f/from-bones (:frame-bone-randomization config))]
+    (map (partial apply bf) bone-pairs)))
 
 (defn new-state []
   (let [bones (new-bones)
