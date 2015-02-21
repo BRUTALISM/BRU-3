@@ -20,8 +20,8 @@
   [r b1 b2]
   (let [rand-range (fn [min max] (+ min (rand (- max min))))
         rfn #(rand-range (- r) r)
-        rb1 (update-in b1 [:length] * (+ 1 (rfn)))
-        rb2 (update-in b2 [:length] * (+ 1 (rfn)))
+        rb1 (update-in b1 [:length] * (inc (rfn)))
+        rb2 (update-in b2 [:length] * (inc (rfn)))
         [b1u b1d] (d/vertices rb1)
         [b2u b2d] (d/vertices rb2)]
     (Frame. b1u b2u b1d b2d)))
