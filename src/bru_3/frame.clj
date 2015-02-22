@@ -3,7 +3,7 @@
 
 (defrecord Frame [tl tr bl br]
   d/Decomposition
-  (vertices [this] ((juxt :tl :tr :bl :br) this))
+  (vertices [this] ((juxt :tl :tr :br :bl) this))
   (edges [this]
     (let [edge (fn [[v1 v2]] (vec (map (partial get this) [v1 v2])))
           pairs [[:tl :tr] [:tr :br] [:br :bl] [:bl :tl]]]

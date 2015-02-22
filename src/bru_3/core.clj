@@ -18,14 +18,14 @@
    :length-bounds [20 130]
    :max-angle 20
    :frame-bone-randomization 0.4
-   :wings-conf {:bite 1/4
+   :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
    
    ;; presentation
    :dot-size 5
-   :draw-bones true
-   :draw-frames true
+   :draw-bones false
+   :draw-frames false
    :draw-wings true})
 
 (defn new-bones []
