@@ -4,7 +4,8 @@
             [thi.ng.geom.core.vector :as v]
             [bru-3.bone :as b]
             [bru-3.frame :as f]
-            [bru-3.decomposition :as d]))
+            [bru-3.decomposition :as d]
+            [bru-3.face.wings :as w]))
 
 ;;
 ;; Processing-specific display code
@@ -17,11 +18,15 @@
    :length-bounds [20 130]
    :max-angle 20
    :frame-bone-randomization 0.4
+   :wings-conf {:bite 1/4
+                :indent 1/3
+                :sharpness 1/9}
    
    ;; presentation
    :dot-size 5
    :draw-bones true
-   :draw-frames true})
+   :draw-frames true
+   :draw-wings true})
 
 (defn new-bones []
   (let [initial-bone (bru_3.bone.Bone. (v/vec2 0.0 (/ (q/height) 2)) 0.0 0.0)]
@@ -37,11 +42,16 @@
         bf (partial f/from-bones (:frame-bone-randomization config))]
     (map (partial apply bf) bone-pairs)))
 
+(defn new-wings [frames]
+  (map (partial w/frame->face (:wings-conf config)) frames))
+
 (defn new-state []
   (let [bones (new-bones)
-        frames (new-frames bones)]
+        frames (new-frames bones)
+        wings (new-wings frames)]
     {:bones bones
-     :frames frames}))
+     :frames frames
+     :wings wings}))
 
 (defn draw-bone [b]
   (let [[[x1 y1] [x2 y2]] (d/vertices b)
@@ -58,6 +68,11 @@
     (q/stroke 17 110 191)
     (doseq [[[x1 y1] [x2 y2]] es] (q/line x1 y1 x2 y2))
     (doseq [[x1 y1] vs] (q/ellipse x1 y1 ds ds))))
+
+(defn draw-verts [verts]
+  (q/begin-shape)
+  (doseq [[x y] verts] (q/vertex x y))
+  (q/end-shape))
 
 ;;
 ;; Quil stuff
@@ -86,11 +101,14 @@
       (doseq [bone bones] (draw-bone bone)))
     (when (:draw-frames config)
       (doseq [frame (:frames state)] (draw-frame frame)))
+    (when (:draw-wings config)
+      (doseq [verts (:wings state)] (draw-verts verts)))
     (q/pop-matrix)))
 
 (defn key-pressed [state key-info]
   (case (:key key-info)
     :a (new-state)
+    ;; TODO: Render to file.
     state))
 
 (q/defsketch bru-3

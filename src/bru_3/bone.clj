@@ -9,7 +9,7 @@
     (let [{[x y] :position length :length angle :angle} this
           xdist (* (/ length 2) (Math/sin (Math/toRadians angle)))
           ydist (* (/ length 2) (Math/cos (Math/toRadians angle)))]
-      [[(- x xdist) (- y ydist)] [(+ x xdist) (+ y ydist)]]))
+      [(v/vec2 (- x xdist) (- y ydist)) (v/vec2 (+ x xdist) (+ y ydist))]))
   (edges [this] (d/vertices this)))
 
 (def zero-bone (Bone. (v/vec2 0.0 0.0) 0.0 0.0))
