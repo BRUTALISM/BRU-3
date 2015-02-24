@@ -29,12 +29,8 @@
 ;(defn cornerverts [])
 
 (defn frame->face [conf fr]
-  (let [juxti (fn [i] (juxt #(nth % i)
-                            #(nth % (+ i 1))
-                            #(nth % (+ i 2))
-                            #(nth % (+ i 3))))
-        vs (cycle (d/vertices fr))
-        quadruples (map #((juxti %) vs) (range 4))
+  (let [vs (cycle (d/vertices fr))
+        quadruples (map #(->> vs (take (+ % 4)) (drop %)) (range 4))
         edgefn (fn [verts]
                  (-> [(nth verts 1)]
                      (into (edgeverts conf verts))
