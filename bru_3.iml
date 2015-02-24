@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module cursive.leiningen.project.LeiningenProjectsManager.isLeinModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/dev-resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Leiningen: clojure-complete:0.2.3" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.6.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.nrepl:0.2.3" level="project" />
+    <orderEntry type="library" name="Leiningen: quil:2.2.4" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom:0.3.0-20141111.175453-1" level="project" />
+    <orderEntry type="library" name="Leiningen: com.lowagie/itext:2.1.7" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/gluegen-rt-fat:2.1.5" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/jogl-all-fat:2.1.5" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/processing-core:2.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/processing-dxf:2.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/processing-js:1.4.8" level="project" />
+    <orderEntry type="library" name="Leiningen: quil/processing-pdf:2.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: bouncycastle/bcmail-jdk14:138" level="project" />
+    <orderEntry type="library" name="Leiningen: bouncycastle/bcprov-jdk14:138" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bctsp-jdk14:1.38" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bcmail-jdk14:1.38" level="project" />
+    <orderEntry type="library" name="Leiningen: org.bouncycastle/bcprov-jdk14:1.38" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-core:0.3.0-20141231.012910-4" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-meshops:0.3.0-20141231.013017-3" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-physics:0.3.0-20141231.013048-3" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-svg:0.3.0-20141231.013144-3" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-types:0.3.0-20141231.012944-3" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/geom-webgl:0.3.0-20150105.151851-4" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/common:0.3.0-20141109.113925-3" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/macromath:0.3.0-20141207.192809-1" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cemerick/clojurescript.test:0.2.2" level="project" />
+    <orderEntry type="library" name="Leiningen: hiccup:1.0.5" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/color:0.1.0-20140923.130037-1" level="project" />
+    <orderEntry type="library" name="Leiningen: thi.ng/shaderlib:0.1.0-20150101.144135-3" level="project" />
+    <orderEntry type="library" name="Leiningen: kibu/dependency:0.1.2-20141212.031120-1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/clojurescript:0.0-2411" level="project" />
+    <orderEntry type="library" name="Leiningen: com.google.javascript/closure-compiler:v20140625" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/data.json:0.2.3" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/google-closure-library:0.0-20140718-946a7d39" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.reader:0.8.10" level="project" />
+    <orderEntry type="library" name="Leiningen: org.mozilla/rhino:1.7R4" level="project" />
+    <orderEntry type="library" name="Leiningen: args4j:2.0.26" level="project" />
+    <orderEntry type="library" name="Leiningen: com.google.code.findbugs/jsr305:1.3.9" level="project" />
+    <orderEntry type="library" name="Leiningen: com.google.guava/guava:17.0" level="project" />
+    <orderEntry type="library" name="Leiningen: com.google.javascript/closure-compiler-externs:v20140625" level="project" />
+    <orderEntry type="library" name="Leiningen: com.google.protobuf/protobuf-java:2.5.0" level="project" />
+    <orderEntry type="library" name="Leiningen: org.json/json:20090211" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/google-closure-library-third-party:0.0-20140718-946a7d39" level="project" />
+  </component>
+</module>
