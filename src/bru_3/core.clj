@@ -15,9 +15,9 @@
   {;; algo
    :bone-count 10
    :distance-bounds [100 120]
-   :length-bounds [20 130]
+   :length-bounds [80 130]
    :max-angle 20
-   :frame-bone-randomization 0.4
+   :frame-bone-randomization 0.1
    :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
@@ -72,7 +72,7 @@
 (defn draw-verts [verts]
   (q/begin-shape)
   (doseq [[x y] verts] (q/vertex x y))
-  (q/end-shape))
+  (q/end-shape :close))
 
 ;;
 ;; Quil stuff
@@ -102,6 +102,8 @@
     (when (:draw-frames config)
       (doseq [frame (:frames state)] (draw-frame frame)))
     (when (:draw-wings config)
+      (q/fill 17 110 191)
+      (q/stroke 242 237 228)
       (doseq [verts (:wings state)] (draw-verts verts)))
     (q/pop-matrix)))
 
