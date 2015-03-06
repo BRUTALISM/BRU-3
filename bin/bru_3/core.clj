@@ -1,14 +1,16 @@
 (ns bru-3.core
   (:require [quil.core :as q]
             [quil.middleware :as m]
+            [thi.ng.geom.core :as g]
             [thi.ng.geom.core.vector :as v]
             [bru-3.bone :as b]
             [bru-3.frame :as f]
             [bru-3.decomposition :as d]
-            [bru-3.face.wings :as w]))
+            [bru-3.face.wings :as w]
+            [bru-3.geometry.distortion :as distortion]))
 
 ;;
-;; Processing-specific display code
+;; Config
 ;;
 
 (def config
@@ -21,12 +23,19 @@
    :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
+   :distortion-field-step 50.0
+   :distortion-intensity 30.0
    
    ;; presentation
    :dot-size 5
-   :draw-bones false
-   :draw-frames false
-   :draw-wings true})
+   :draw-bones true
+   :draw-frames true
+   :draw-wings false
+   :draw-distortion true})
+
+;;
+;; State generation
+;;
 
 (defn new-bones []
   (let [initial-bone (bru_3.bone.Bone. (v/vec2 0.0 (/ (q/height) 2)) 0.0 0.0)]
@@ -45,13 +54,23 @@
 (defn new-wings [frames]
   (map (partial w/frame->face (:wings-conf config)) frames))
 
+(defn new-distortion-field []
+  (distortion/field (+ 1 (/ (q/width) (:distortion-field-step config)))
+                    (+ 1 (/ (q/height) (:distortion-field-step config)))))
+
 (defn new-state []
   (let [bones (new-bones)
         frames (new-frames bones)
-        wings (new-wings frames)]
+        wings (new-wings frames)
+        distortion (new-distortion-field)]
     {:bones bones
      :frames frames
-     :wings wings}))
+     :wings wings
+     :distortion distortion}))
+
+;;
+;; Drawing
+;;
 
 (defn draw-bone [b]
   (let [[[x1 y1] [x2 y2]] (d/vertices b)
@@ -73,6 +92,16 @@
   (q/begin-shape)
   (doseq [[x y] verts] (q/vertex x y))
   (q/end-shape :close))
+
+(defn draw-distortion [df]
+  (let [step (:distortion-field-step config)
+        intensity (:distortion-intensity config)]
+    (doseq [[i row] (map vector (iterate inc 0) df)]
+     (doseq [[j v] (map vector (iterate inc 0) row)]
+       (let [x1 (* j step)
+             y1 (* i step)
+             [x2 y2] (g/+ (g/* v intensity) (v/vec2 x1 y1))]
+         (q/line x1 y1 x2 y2))))))
 
 ;;
 ;; Quil stuff
@@ -96,7 +125,7 @@
     (q/fill 255 255 255)
     (q/stroke 255 255 255)
     (q/push-matrix)
-    (q/translate xoff 0)
+    ;(q/translate xoff 0)
     (when (:draw-bones config)
       (doseq [bone bones] (draw-bone bone)))
     (when (:draw-frames config)
@@ -105,7 +134,9 @@
       (q/fill 17 110 191)
       (q/stroke 242 237 228)
       (doseq [verts (:wings state)] (draw-verts verts)))
-    (q/pop-matrix)))
+    (q/pop-matrix)
+    (when (:draw-distortion config)
+      (draw-distortion (:distortion state)))))
 
 (defn key-pressed [state key-info]
   (case (:key key-info)
@@ -115,7 +146,7 @@
 
 (q/defsketch bru-3
   :title "BRU-3"
-  :size [1100 600]
+  :size [1200 400]
   :setup setup
   :update update
   :draw draw
