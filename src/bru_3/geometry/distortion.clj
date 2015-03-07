@@ -8,8 +8,6 @@
   [xres yres]
   (vec (for [x (range xres)] (vec (for [y (range yres)] (v/randvec2))))))
 
-;; TODO: Implement proper bilinear interpolation.
-
 (defn vec-at
   "Returns the (normalized) interpolated Vec2 from a given vector field vf at
   the given x and y coordinates. The vector field is treated as having the
