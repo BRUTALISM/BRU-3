@@ -23,13 +23,16 @@
    :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
+   
    :distortion-field-step 50.0
-   :distortion-intensity 30.0
+   :distortion-intensity 20.0
+   :distortion-xresolution 4
+   :distortion-yresolution 4
    
    ;; presentation
    :dot-size 5
-   :draw-bones true
-   :draw-frames true
+   :draw-bones false
+   :draw-frames false
    :draw-wings false
    :draw-distortion true})
 
@@ -55,8 +58,8 @@
   (map (partial w/frame->face (:wings-conf config)) frames))
 
 (defn new-distortion-field []
-  (distortion/field (+ 1 (/ (q/width) (:distortion-field-step config)))
-                    (+ 1 (/ (q/height) (:distortion-field-step config)))))
+  (distortion/field (:distortion-xresolution config)
+                    (:distortion-yresolution config)))
 
 (defn new-state []
   (let [bones (new-bones)
@@ -93,15 +96,33 @@
   (doseq [[x y] verts] (q/vertex x y))
   (q/end-shape :close))
 
+(defn draw-vector [x1 y1 x2 y2]
+  (let [ds (:dot-size config)]
+    (q/line x1 y1 x2 y2)
+    (q/ellipse x2 y2 ds ds)))
+
 (defn draw-distortion [df]
   (let [step (:distortion-field-step config)
-        intensity (:distortion-intensity config)]
-    (doseq [[i row] (map vector (iterate inc 0) df)]
-     (doseq [[j v] (map vector (iterate inc 0) row)]
-       (let [x1 (* j step)
-             y1 (* i step)
-             [x2 y2] (g/+ (g/* v intensity) (v/vec2 x1 y1))]
-         (q/line x1 y1 x2 y2))))))
+        intensity (:distortion-intensity config)
+        xmax (inc (q/width))
+        ymax (inc (q/height))]
+    (q/push-style)
+    (q/fill 255)
+    (q/stroke 255)
+    (doseq [x (range 0 xmax step)
+            y (range 0 ymax step)
+            :let [[x1 y1] (g/+ (g/* (distortion/vec-at df x y xmax ymax)
+                                    intensity)
+                               (v/vec2 x y))]]
+      (draw-vector x y x1 y1))
+    (q/fill 255 32 32)
+    (q/stroke 255 32 32)
+    (doseq [i (range (count df))
+            j (range (count (first df)))
+            :let [xstep (/ (q/width) (count df))
+                  ystep (/ (q/height) (count (first df)))]]
+      (q/ellipse (* i xstep) (* j ystep) 10 10))
+    (q/pop-style)))
 
 ;;
 ;; Quil stuff
@@ -146,7 +167,7 @@
 
 (q/defsketch bru-3
   :title "BRU-3"
-  :size [1200 400]
+  :size [1200 800]
   :setup setup
   :update update
   :draw draw

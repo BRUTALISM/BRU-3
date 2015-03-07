@@ -3,24 +3,32 @@
             [thi.ng.geom.core.vector :as v]))
 
 (defn field
-  "Returns a randomized 2D vector field of given width w and height h. All of
-  the vectors in the field are normalized."
-  [w h]
-  (vec (for [y (range h)] (vec (for [x (range w)] (v/randvec2))))))
+  "Returns a randomized 2D vector field of given resolution on the x and y
+  axes."
+  [xres yres]
+  (vec (for [x (range xres)] (vec (for [y (range yres)] (v/randvec2))))))
+
+;; TODO: Implement proper bilinear interpolation.
 
 (defn vec-at
   "Returns the (normalized) interpolated Vec2 from a given vector field vf at
-  the given x and y coordinates."
-  [vf x y]
-  (let [lx (int (Math/floor x))
-        ux (int (Math/ceil x))
-        tx (- x lx)
-        ly (int (Math/floor y))
-        uy (int (Math/ceil y))
-        ty (- y ly)]
+  the given x and y coordinates. The vector field is treated as having the
+  coordinates in the [0, xmax] and [0, ymax] ranges for the x and y axis,
+  respectively."
+  [vf x y xmax ymax]
+  (let [xcount (count vf)
+        ycount (count (first vf))
+        xtr (* (dec xcount) (/ x xmax))
+        ytr (* (dec ycount) (/ y ymax))
+        lx (int (Math/floor xtr))
+        ux (int (Math/ceil xtr))
+        tx (- xtr lx)
+        ly (int (Math/floor ytr))
+        uy (int (Math/ceil ytr))
+        ty (- ytr ly)]
     (->
-      (g/+ (g/* (get-in vf [ux uy]) tx ty)
-           (g/* (get-in vf [ux ly]) tx (- 1 ty))
-           (g/* (get-in vf [lx uy]) (- 1 tx) ty)
-           (g/* (get-in vf [lx ly]) (- 1 tx) (- 1 ty)))
+      (g/+ (g/* (get-in vf [ux uy]) (* tx ty))
+           (g/* (get-in vf [ux ly]) (* tx (- 1 ty)))
+           (g/* (get-in vf [lx uy]) (* (- 1 tx) ty))
+           (g/* (get-in vf [lx ly]) (* (- 1 tx) (- 1 ty))))
       g/normalize)))
