@@ -16,25 +16,25 @@
 (def config
   {;; algo
    :bone-count 10
-   :distance-bounds [100 120]
-   :length-bounds [80 130]
-   :max-angle 20
-   :frame-bone-randomization 0.1
+   :distance-bounds [80 120]
+   :length-bounds [60 130]
+   :max-angle 30
+   :frame-bone-randomization 0.3
    :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
    
-   :distortion-field-step 50.0
+   :distortion-field-step 20.0
    :distortion-intensity 20.0
-   :distortion-xresolution 4
-   :distortion-yresolution 4
+   :distortion-xresolution 8
+   :distortion-yresolution 8
    
    ;; presentation
    :dot-size 5
    :draw-bones false
    :draw-frames false
-   :draw-wings false
-   :draw-distortion true})
+   :draw-wings true
+   :draw-distortion false})
 
 ;;
 ;; State generation
@@ -54,8 +54,14 @@
         bf (partial f/from-bones (:frame-bone-randomization config))]
     (map (partial apply bf) bone-pairs)))
 
-(defn new-wings [frames]
-  (map (partial w/frame->face (:wings-conf config)) frames))
+(defn new-wings [frames df]
+  (let [di (:distortion-intensity config)
+        wings (map (partial w/frame->face (:wings-conf config)) frames)
+        vfn (fn [v]
+              (let [[x y] v]
+                (g/+ v (g/* (distortion/vec-at df x y (q/width) (q/height))
+                            di))))]
+    (map #(map vfn %) wings)))
 
 (defn new-distortion-field []
   (distortion/field (:distortion-xresolution config)
@@ -64,8 +70,8 @@
 (defn new-state []
   (let [bones (new-bones)
         frames (new-frames bones)
-        wings (new-wings frames)
-        distortion (new-distortion-field)]
+        distortion (new-distortion-field)
+        wings (new-wings frames distortion)]
     {:bones bones
      :frames frames
      :wings wings
