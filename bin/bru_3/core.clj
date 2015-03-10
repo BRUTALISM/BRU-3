@@ -25,8 +25,8 @@
                 :sharpness 1/9}
    
    :distortion-field-step 20.0
-   :distortion-intensity 20.0
-   :distortion-xresolution 8
+   :distortion-intensity 0
+   :distortion-xresolution 16
    :distortion-yresolution 8
    
    ;; presentation
@@ -56,7 +56,9 @@
 
 (defn new-wings [frames df]
   (let [di (:distortion-intensity config)
-        wings (map (partial w/frame->face (:wings-conf config)) frames)
+        letters [:b :r :u :t :a :l :i :s :m]
+        wings (map (partial w/frame->face (:wings-conf config))
+                   (partition 2 (interleave frames letters)))
         vfn (fn [v]
               (let [[x y] v]
                 (g/+ v (g/* (distortion/vec-at df x y (q/width) (q/height))
@@ -173,7 +175,7 @@
 
 (q/defsketch bru-3
   :title "BRU-3"
-  :size [1200 800]
+  :size [1200 400]
   :setup setup
   :update update
   :draw draw

@@ -19,20 +19,27 @@
    :bottom-right :bottom-left
    :left-bottom :left-top])
 
-(defn edgeverts [{b :bite in :indent s :sharpness} [pv v1 v2 nv]]
+(defn- holemap [l]
+  (map #(% (l letter-map)) clockwise-keys))
+
+(defn edgeverts
+  [{b :bite in :indent s :sharpness} [[pv _] [v1 h1] [v2 _] [nv _]]]
   (let [piv (g/mix v1 pv b)
         niv (g/mix v2 nv b)]
-    [(g/mix v1 v2 in)
-     (g/mix piv niv in)
-     (g/mix v1 v2 (+ in s))]))
+    (if h1
+      [(g/mix v1 v2 in) (g/mix piv niv in) (g/mix v1 v2 (+ in s))]
+      [(g/mix v1 v2 in)])))
 
 ;(defn cornerverts [])
 
-(defn frame->face [conf fr]
-  (let [vs (cycle (d/vertices fr))
-        quadruples (map #(->> vs (take (+ % 4)) (drop %)) (range 4))
-        edgefn (fn [verts]
-                 (-> [(nth verts 1)]
-                     (into (edgeverts conf verts))
-                     (into (reverse (edgeverts conf (reverse verts))))))]
-    (apply concat (map edgefn quadruples))))
+(defn frame->face [conf [fr l]]
+  (let [vs (drop 3 (cycle (d/vertices fr)))
+        hs (cycle (holemap l))
+        quadruples (fn [xs] (map #(->> xs (take (+ % 4)) (drop %)) (range 4)))
+        vhs (partition 2 (interleave vs hs))
+        qvhs (quadruples vhs)
+        edgefn (fn [coll]
+                 (-> [(-> coll second first)]
+                     (into (edgeverts conf coll))
+                     (into (reverse (edgeverts conf (reverse coll))))))]
+    (apply concat (map edgefn qvhs))))
