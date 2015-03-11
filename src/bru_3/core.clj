@@ -23,12 +23,12 @@
    :wings-conf {:bite 1/20
                 :indent 1/3
                 :sharpness 1/9}
-   
+
    :distortion-field-step 20.0
-   :distortion-intensity 0
+   :distortion-intensity 20
    :distortion-xresolution 16
    :distortion-yresolution 8
-   
+
    ;; presentation
    :dot-size 5
    :draw-bones false
