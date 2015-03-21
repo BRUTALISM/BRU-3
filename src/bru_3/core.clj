@@ -24,9 +24,9 @@
                 :indent 1/3
                 :sharpness 1/9}
 
-   :distortion-intensity 50
-   :distortion-xresolution 16
-   :distortion-yresolution 8
+   :distortion-intensity 60
+   :distortion-xresolution 10
+   :distortion-yresolution 4
 
    ;; presentation
    :dot-size 5
@@ -150,7 +150,7 @@
         sw (q/width)
         lw (- lx fx)
         xoff (- (/ (- sw lw) 2) fx)]
-    (q/background 0)
+    (q/background 128)
     (q/fill 255 255 255)
     (q/stroke 255 255 255)
     (q/push-matrix)
@@ -160,8 +160,11 @@
     (when (:draw-frames config)
       (doseq [frame (:frames state)] (draw-frame frame)))
     (when (:draw-wings config)
-      (q/fill 17 110 191)
-      (q/stroke 242 237 228)
+      ;;(q/fill 17 110 191)
+      ;;(q/fill 0)
+      (q/fill 255 0 0)
+      ;;(q/stroke 242 237 228)
+      (q/stroke 255)
       (doseq [verts (:wings state)] (draw-verts verts)))
     (q/pop-matrix)
     (when (:draw-distortion config)
