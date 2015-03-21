@@ -24,13 +24,13 @@
                 :indent 1/3
                 :sharpness 1/9}
 
-   :distortion-field-step 20.0
-   :distortion-intensity 20
+   :distortion-intensity 50
    :distortion-xresolution 16
    :distortion-yresolution 8
 
    ;; presentation
    :dot-size 5
+   :distortion-field-step 50.0
    :draw-bones false
    :draw-frames false
    :draw-wings true
