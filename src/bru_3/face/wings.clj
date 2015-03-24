@@ -1,5 +1,6 @@
 (ns bru-3.face.wings
   (:require [thi.ng.geom.core :as g]
+            [thi.ng.geom.core.vector :as v]
             [bru-3.decomposition :as d]))
 
 (def letter-map
@@ -32,7 +33,14 @@
       [(g/mix v1 v2 in) (g/mix piv niv in) (g/mix v1 v2 (+ in s))]
       [(g/mix v1 v2 in)])))
 
-;(defn cornerverts [])
+(defn cornerverts [{b :bite in :indent} [p v n]]
+  (let [d (g/- v n)
+        l (g/mag d)
+        offset (* l in)
+        dir (g/normalize d)
+        spike (g/+ v (g/* dir offset))
+        intro (g/mix (g/mix spike v 2/3) (g/+ p (g/* dir offset)) b)]
+    [intro spike]))
 
 (defn frame->face [conf [fr l]]
   (let [rconf (assoc conf :reverse true)
@@ -44,7 +52,7 @@
         rev (fn [coll]
               (reverse (map #(vector (first %) (reverse (second %))) coll)))
         edgefn (fn [coll]
-                 (-> [(-> coll second first)]
+                 (-> (cornerverts conf (map first (subvec (vec coll) 0 3)))
                      (into (edgeverts conf coll))
                      (into (reverse (edgeverts rconf (rev coll))))))]
     (apply concat (map edgefn qvhs))))
