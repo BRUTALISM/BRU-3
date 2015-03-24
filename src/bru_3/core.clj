@@ -18,9 +18,9 @@
    :bone-count 10
    :distance-bounds [80 120]
    :length-bounds [60 130]
-   :max-angle 30
+   :max-angle 20
    :frame-bone-randomization 0.3
-   :wings-conf {:bite 1/20
+   :wings-conf {:bite 1/30
                 :indent 1/3
                 :sharpness 1/9}
 

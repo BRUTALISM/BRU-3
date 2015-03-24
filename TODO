@@ -1,4 +1,3 @@
-- winged style (full spec)
 - meaningful distortion (generated using rules, not random)
 - CLJS/WebGL frontend
 - victory
