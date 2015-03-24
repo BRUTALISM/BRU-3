@@ -1,6 +1,5 @@
 (ns bru-3.face.wings
   (:require [thi.ng.geom.core :as g]
-            [thi.ng.geom.core.vector :as v]
             [bru-3.decomposition :as d]))
 
 (def letter-map
@@ -23,9 +22,15 @@
 (defn- holemap [l]
   (map #(% (l letter-map)) clockwise-keys))
 
+(def wingtip-variants
+  [[:spike :round :round :inverted-spike]            ;; left spikes
+   [:spike :round :spike :round]                     ;; top left, bottom right
+   [:round :inverted-spike :spike :round]            ;; right spikes
+   [:round :inverted-spike :round :inverted-spike]]) ;; top right, bottom left
+
 (defn edgeverts
   [{b :bite in :indent s :sharpness rev :reverse}
-   [[pv _] [v1 [h1 _]] [v2 [h2 _]] [nv _]]]
+   [[pv _] [v1 [h1 _] _] [v2 [h2 _] _] [nv _]]]
   (let [piv (g/mix v1 pv b)
         niv (g/mix v2 nv b)
         h (if rev h2 h1)]
@@ -33,26 +38,32 @@
       [(g/mix v1 v2 in) (g/mix piv niv in) (g/mix v1 v2 (+ in s))]
       [(g/mix v1 v2 in)])))
 
-(defn cornerverts [{b :bite in :indent} [p v n]]
-  (let [d (g/- v n)
-        l (g/mag d)
-        offset (* l in)
-        dir (g/normalize d)
-        spike (g/+ v (g/* dir offset))
-        intro (g/mix (g/mix spike v 2/3) (g/+ p (g/* dir offset)) b)]
-    [intro spike]))
+(defn cornerverts [{b :bite in :indent} [[p _] [v _ style] [n _]]]
+  (if (= style :round)
+    [(g/mix v p b) (g/mix v n b)]
+    (let [spike (= style :spike)
+          pp (if spike p n)
+          nn (if spike n p)
+          d (g/- v nn)
+          l (g/mag d)
+          dir (g/normalize d)
+          offset (g/* dir (* l in))
+          tip (g/+ v offset)
+          intro (g/mix (g/mix tip v 2/3) (g/+ pp offset) b)]
+      (if spike [intro tip] [tip intro]))))
 
 (defn frame->face [conf [fr l]]
   (let [rconf (assoc conf :reverse true)
         vs (cycle (d/vertices fr))
         hs (cycle (partition 2 (holemap l)))
+        ws (cycle (rand-nth wingtip-variants))
         quadruples (fn [xs] (map #(->> xs (take (+ % 4)) (drop %)) (range 4)))
-        vhs (partition 2 (interleave vs hs))
+        vhs (partition 3 (interleave vs hs ws))
         qvhs (quadruples vhs)
         rev (fn [coll]
               (reverse (map #(vector (first %) (reverse (second %))) coll)))
         edgefn (fn [coll]
-                 (-> (cornerverts conf (map first (subvec (vec coll) 0 3)))
+                 (-> (cornerverts conf (subvec (vec coll) 0 3))
                      (into (edgeverts conf coll))
                      (into (reverse (edgeverts rconf (rev coll))))))]
     (apply concat (map edgefn qvhs))))
