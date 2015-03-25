@@ -118,21 +118,21 @@
         xmax (inc (q/width))
         ymax (inc (q/height))]
     (q/push-style)
-    (q/fill 255)
-    (q/stroke 255)
+    (q/fill 242 53 53)
+    (q/stroke 242 53 53)
     (doseq [x (range 0 xmax step)
             y (range 0 ymax step)
             :let [[x1 y1] (g/+ (g/* (distortion/vec-at df x y xmax ymax)
                                     intensity)
                                (v/vec2 x y))]]
       (draw-vector x y x1 y1))
-    (q/fill 255 32 32)
-    (q/stroke 255 32 32)
-    (doseq [i (range (count df))
-            j (range (count (first df)))
-            :let [xstep (/ (q/width) (count df))
-                  ystep (/ (q/height) (count (first df)))]]
-      (q/ellipse (* i xstep) (* j ystep) 10 10))
+;;     (q/fill 255 32 32)
+;;     (q/stroke 255 32 32)
+;;     (doseq [i (range (count df))
+;;             j (range (count (first df)))
+;;             :let [xstep (/ (q/width) (count df))
+;;                   ystep (/ (q/height) (count (first df)))]]
+;;       (q/ellipse (* i xstep) (* j ystep) 8 8))
     (q/pop-style)))
 
 ;;
