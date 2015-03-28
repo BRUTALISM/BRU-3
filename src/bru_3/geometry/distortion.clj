@@ -25,8 +25,9 @@
         uy (int (Math/ceil ytr))
         ty (- ytr ly)]
     (->
-      (g/+ (g/* (get-in vf [ux uy]) (* tx ty))
-           (g/* (get-in vf [ux ly]) (* tx (- 1 ty)))
-           (g/* (get-in vf [lx uy]) (* (- 1 tx) ty))
+      ;; g/+ supports a maximum of 3 args so it needs to be split into two ops
+      (g/+ (g/+ (g/* (get-in vf [ux uy]) (* tx ty))
+                (g/* (get-in vf [ux ly]) (* tx (- 1 ty)))
+                (g/* (get-in vf [lx uy]) (* (- 1 tx) ty)))
            (g/* (get-in vf [lx ly]) (* (- 1 tx) (- 1 ty))))
       g/normalize)))
