@@ -2,12 +2,14 @@
   (:require [quil.core :as q]
             [quil.middleware :as m]
             [thi.ng.geom.core :as g]
+            [thi.ng.geom.rect :as r]
             [thi.ng.geom.core.vector :as v]
             [bru-3.bone :as b]
             [bru-3.frame :as f]
             [bru-3.decomposition :as d]
             [bru-3.face.wings :as w]
-            [bru-3.geometry.distortion :as distortion]))
+            [bru-3.geometry.distortion :as distortion]
+            [bru-3.geometry.fault :as fault]))
 
 ;;
 ;; @config
@@ -33,6 +35,7 @@
                    :draw-bones false
                    :draw-frames false
                    :draw-wings true
+                   :draw-fault true
                    :draw-distortion false}))
 
 (defn flip [k]
@@ -72,14 +75,19 @@
   (distortion/field (:distortion-xresolution @config)
                     (:distortion-yresolution @config)))
 
+(defn new-fault-line []
+  (fault/fault-line (r/rect 0 0 (q/width) (q/height)) 10))
+
 (defn new-state []
   (let [bones (new-bones)
         frames (new-frames bones)
+        fault (new-fault-line)
         distortion (new-distortion-field)
         wings (new-wings frames distortion)]
     {:bones bones
      :frames frames
      :wings wings
+     :fault fault
      :distortion distortion}))
 
 ;;
@@ -111,6 +119,14 @@
   (let [ds (:dot-size @config)]
     (q/line x1 y1 x2 y2)
     (q/ellipse x2 y2 ds ds)))
+
+(defn draw-fault [fl]
+  (q/push-style)
+  (q/stroke-weight 2)
+  (q/stroke 10 180 10)
+  (doseq [{[[x1 y1] [x2 y2]] :points} fl]
+    (q/line x1 y1 x2 y2))
+  (q/pop-style))
 
 (defn draw-distortion [df]
   (let [step (:distortion-field-step @config)
@@ -170,17 +186,20 @@
       ;;(q/stroke 242 237 228)
       (q/stroke 225)
       (doseq [verts (:wings state)] (draw-verts verts)))
-    (q/pop-matrix)
     (when (:draw-distortion @config)
-      (draw-distortion (:distortion state)))))
+      (draw-distortion (:distortion state)))
+    (when (:draw-fault @config)
+      (draw-fault (:fault state)))
+    (q/pop-matrix)))
 
 (defn key-pressed [state key-info]
   (case (:key key-info)
     :a (new-state)
-    :b (let [] (flip :draw-bones) state)
-    :f (let [] (flip :draw-frames) state)
-    :w (let [] (flip :draw-wings) state)
-    :d (let [] (flip :draw-distortion) state)
+    :b (do (flip :draw-bones) state)
+    :f (do (flip :draw-frames) state)
+    :w (do (flip :draw-wings) state)
+    :t (do (flip :draw-fault) state)
+    :d (do (flip :draw-distortion) state)
     ;; TODO: Render to file.
     state))
 
