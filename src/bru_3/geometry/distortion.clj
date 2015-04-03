@@ -4,14 +4,26 @@
 
 (defn field
   "Returns a randomized 2D vector field of given resolution on the x and y
-  axes."
+  axes. If the parameter fls is given, the vectors are generated such that each
+  of them is orientated roughly toward its closest fault line (from fls). In
+  other words, each generated vector lies between the closest fault line and the
+  line parallel to that fault line which goes through the given vector's
+  origin."
   ([xres yres]
    (vec (for [x (range xres)] (vec (for [y (range yres)] (v/randvec2))))))
-  ([xres yres fl xscale yscale]
-   (let [closest-line (fn [v] (apply min-key #(g/dist v (apply g/mix (:p %))) fl))]
+  ([xres yres fls xscale yscale]
+   (let [closest-line (fn [v] (apply min-key
+                                     #(g/dist v (apply g/mix (:points %)))
+                                     fls))]
      (vec (for [x (range xres)]
             (vec (for [y (range yres)]
-                   (closest-line (v/vec2 (* x xscale) (* y yscale))))))))))
+                   (let [v (v/vec2 (* x xscale) (* y yscale))
+                         clp (:points (closest-line v))
+                         clv (g/normalize (apply g/- (reverse clp)))
+                         tv (g/- v (clp 0))
+                         s (Math/signum (g/cross tv clv))
+                         a (* s (rand) Math/PI)]
+                     (g/rotate clv a)))))))))
 
 (defn vec-at
   "Returns the (normalized) interpolated Vec2 from a given vector field vf at

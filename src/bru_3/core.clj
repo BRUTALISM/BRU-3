@@ -25,9 +25,11 @@
                                 :indent 1/3
                                 :sharpness 1/9}
 
+                   :fault-count 5
+
                    :distortion-intensity 60
                    :distortion-xresolution 10
-                   :distortion-yresolution 4
+                   :distortion-yresolution 10
 
                    ;; presentation
                    :dot-size 5
@@ -36,7 +38,7 @@
                    :draw-frames false
                    :draw-wings true
                    :draw-fault true
-                   :draw-distortion false}))
+                   :draw-distortion true}))
 
 (defn flip [k]
   (let [v (not (k @config))]
@@ -74,12 +76,12 @@
 (defn new-distortion-field [fl]
   (let [xres (:distortion-xresolution @config)
         yres (:distortion-yresolution @config)
-        xscale (/ (q/width) xres)
-        yscale (/ (q/height) yres)]
+        xscale (/ (q/width) (dec xres))
+        yscale (/ (q/height) (dec yres))]
     (distortion/field xres yres fl xscale yscale)))
 
 (defn new-fault-line []
-  (fault/fault-line (r/rect 0 0 (q/width) (q/height)) 10))
+  (fault/fault-line (r/rect 0 0 (q/width) (q/height)) (:fault-count @config)))
 
 (defn new-state []
   (let [bones (new-bones)

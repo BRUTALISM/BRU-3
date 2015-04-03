@@ -11,7 +11,7 @@
    :l #{:right-bottom}
    :i #{}
    :s #{:left-bottom :right-top}
-   :m #{:bottom-left}})
+   :m #{:left-top :left-bottom}})
 
 (def clockwise-keys
   [:top-left :top-right
