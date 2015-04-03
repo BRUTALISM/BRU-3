@@ -71,9 +71,12 @@
                             di))))]
     (map #(map vfn %) wings)))
 
-(defn new-distortion-field []
-  (distortion/field (:distortion-xresolution @config)
-                    (:distortion-yresolution @config)))
+(defn new-distortion-field [fl]
+  (let [xres (:distortion-xresolution @config)
+        yres (:distortion-yresolution @config)
+        xscale (/ (q/width) xres)
+        yscale (/ (q/height) yres)]
+    (distortion/field xres yres fl xscale yscale)))
 
 (defn new-fault-line []
   (fault/fault-line (r/rect 0 0 (q/width) (q/height)) 10))
@@ -82,7 +85,7 @@
   (let [bones (new-bones)
         frames (new-frames bones)
         fault (new-fault-line)
-        distortion (new-distortion-field)
+        distortion (new-distortion-field fault)
         wings (new-wings frames distortion)]
     {:bones bones
      :frames frames

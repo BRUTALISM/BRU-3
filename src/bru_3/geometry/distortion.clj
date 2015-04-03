@@ -5,8 +5,13 @@
 (defn field
   "Returns a randomized 2D vector field of given resolution on the x and y
   axes."
-  [xres yres]
-  (vec (for [x (range xres)] (vec (for [y (range yres)] (v/randvec2))))))
+  ([xres yres]
+   (vec (for [x (range xres)] (vec (for [y (range yres)] (v/randvec2))))))
+  ([xres yres fl xscale yscale]
+   (let [closest-line (fn [v] (apply min-key #(g/dist v (apply g/mix (:p %))) fl))]
+     (vec (for [x (range xres)]
+            (vec (for [y (range yres)]
+                   (closest-line (v/vec2 (* x xscale) (* y yscale))))))))))
 
 (defn vec-at
   "Returns the (normalized) interpolated Vec2 from a given vector field vf at
