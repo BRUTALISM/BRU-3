@@ -28,8 +28,8 @@
                    :fault-count 5
 
                    :distortion-intensity 60
-                   :distortion-xresolution 10
-                   :distortion-yresolution 10
+                   :distortion-xresolution 12
+                   :distortion-yresolution 4
 
                    ;; presentation
                    :dot-size 5
