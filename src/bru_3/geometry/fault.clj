@@ -15,13 +15,10 @@
         ystart (randy)]
     (loop [faults []
            i n
-           x xstart
-           y ystart]
+           x xstart]
       (if (pos? i)
-        (let [newx (+ x (/ (:x size) n))
-              newy (randy)]
-          (recur (conj faults (l/line2 x y newx newy))
+        (let [newx (+ x (/ (:x size) n))]
+          (recur (conj faults (l/line2 x (randy) newx (randy)))
                  (dec i)
-                 newx
-                 newy))
+                 newx))
         faults))))
