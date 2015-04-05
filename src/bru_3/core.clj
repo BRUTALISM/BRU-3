@@ -27,7 +27,7 @@
 
                    :fault-count 10
 
-                   :distortion-intensity 50
+                   :distortion-intensity 40
                    :distortion-xresolution 12
                    :distortion-yresolution 4
 
@@ -38,7 +38,7 @@
                    :draw-frames false
                    :draw-wings true
                    :draw-fault true
-                   :draw-distortion true
+                   :draw-distortion false
                    :outline-only false
                    :two-phase-shapes true}))
 

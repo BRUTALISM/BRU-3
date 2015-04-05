@@ -11,15 +11,22 @@
   (let [xmid (+ (:x origin) (/ (:x size) 2))
         xstart (:x origin)
         rand-range (fn [min max] (+ min (rand (- max min))))
-        randy (fn [] (rand-range (:y origin) (+ (:y origin) (:y size))))
+        yrange 1/8 ;; TODO: config
+        ysize (:y size)
+        ymid (+ (:y origin) (/ ysize 2))
+        randy (fn [] (rand-range (- ymid (* ysize yrange))
+                                 (+ ymid (* ysize yrange))))
         ystart (randy)]
     (loop [faults []
            i n
            x xstart]
       (if (pos? i)
-        (let [xx (+ x (* 200 (rand)))
-              newx (+ xx (* 100 (rand)))]
-          (recur (conj faults (l/line2 xx (randy) newx (randy)))
+        (let [x1 (+ x (rand-range 100 200)) ;; TODO: config
+              x2 (+ x1 (rand-range 50 100)) ;; TODO: config
+              y1 (randy)
+              rs (if (> 1/2 (rand)) 1 -1)
+              y2 (+ y1 (* rs (rand-range 10 50)))] ;; TODO: config
+          (recur (conj faults (l/line2 x1 y1 x2 y2))
                  (dec i)
-                 newx))
+                 x2))
         faults))))
