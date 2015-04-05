@@ -25,7 +25,11 @@
                                 :indent 1/3
                                 :sharpness 1/9}
 
-                   :fault-count 10
+                   :fault-config {:count 10
+                                  :y-rand-percentage 1/2
+                                  :y-length-range [10 70]
+                                  :x-spread-range [100 400]
+                                  :x-length-range [50 100]}
 
                    :distortion-intensity 40
                    :distortion-xresolution 12
@@ -84,7 +88,7 @@
     ;;(distortion/field xres yres)))
 
 (defn new-fault-line []
-  (fault/fault-line (r/rect 0 0 (q/width) (q/height)) (:fault-count @config)))
+  (fault/fault-line (r/rect 0 0 (q/width) (q/height)) (:fault-config @config)))
 
 (defn new-state []
   (let [bones (new-bones)
