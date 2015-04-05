@@ -22,7 +22,9 @@
                          clv (g/normalize (apply g/- (reverse clp)))
                          tv (g/- v (clp 0))
                          s (Math/signum (g/cross tv clv))
-                         a (* s (rand) Math/PI)]
+                         amax (* 1/2 Math/PI) ;; TODO: should be a param!
+                         a (* s (+ (/ (- Math/PI amax) 2)
+                                   (* (rand) amax)))]
                      (g/rotate clv a)))))))))
 
 (defn vec-at

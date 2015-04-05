@@ -25,9 +25,9 @@
                                 :indent 1/3
                                 :sharpness 1/9}
 
-                   :fault-count 5
+                   :fault-count 10
 
-                   :distortion-intensity 60
+                   :distortion-intensity 50
                    :distortion-xresolution 12
                    :distortion-yresolution 4
 
@@ -38,7 +38,9 @@
                    :draw-frames false
                    :draw-wings true
                    :draw-fault true
-                   :draw-distortion true}))
+                   :draw-distortion true
+                   :outline-only false
+                   :two-phase-shapes true}))
 
 (defn flip [k]
   (let [v (not (k @config))]
@@ -79,6 +81,7 @@
         xscale (/ (q/width) (dec xres))
         yscale (/ (q/height) (dec yres))]
     (distortion/field xres yres fl xscale yscale)))
+    ;;(distortion/field xres yres)))
 
 (defn new-fault-line []
   (fault/fault-line (r/rect 0 0 (q/width) (q/height)) (:fault-count @config)))
@@ -185,12 +188,22 @@
     (when (:draw-frames @config)
       (doseq [frame (:frames state)] (draw-frame frame)))
     (when (:draw-wings @config)
-      ;;(q/fill 17 110 191)
-      (q/fill 0)
-      ;;(q/fill 255 0 0)
-      ;;(q/stroke 242 237 228)
-      (q/stroke 225)
-      (doseq [verts (:wings state)] (draw-verts verts)))
+      (if (:outline-only @config)
+        (do
+          (q/no-fill)
+          (q/stroke 0))
+        (do
+          (q/fill 0)
+          (q/stroke 225)))
+      (if (:two-phase-shapes @config)
+        (do
+          (q/push-style)
+          (q/no-stroke)
+          (doseq [verts (:wings state)] (draw-verts verts))
+          (q/pop-style)
+          (q/no-fill)
+          (doseq [verts (:wings state)] (draw-verts verts)))
+        (doseq [verts (:wings state)] (draw-verts verts))))
     (when (:draw-distortion @config)
       (draw-distortion (:distortion state)))
     (when (:draw-fault @config)
@@ -205,6 +218,8 @@
     :w (do (flip :draw-wings) state)
     :t (do (flip :draw-fault) state)
     :d (do (flip :draw-distortion) state)
+    :o (do (flip :outline-only) state)
+    :p (do (flip :two-phase-shapes) state)
     ;; TODO: Render to file.
     state))
 

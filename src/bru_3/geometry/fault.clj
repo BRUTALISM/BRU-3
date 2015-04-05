@@ -17,8 +17,9 @@
            i n
            x xstart]
       (if (pos? i)
-        (let [newx (+ x (/ (:x size) n))]
-          (recur (conj faults (l/line2 x (randy) newx (randy)))
+        (let [xx (+ x (* 200 (rand)))
+              newx (+ xx (* 100 (rand)))]
+          (recur (conj faults (l/line2 xx (randy) newx (randy)))
                  (dec i)
                  newx))
         faults))))
