@@ -18,7 +18,7 @@
 (def config (atom {;; algo
                    :bone-count 10
                    :distance-bounds [80 120]
-                   :length-bounds [60 130]
+                   :length-bounds [50 100]
                    :max-angle 20
                    :frame-bone-randomization 0.3
                    :wings-conf {:bite 1/30
@@ -26,9 +26,9 @@
                                 :sharpness 1/9}
 
                    :fault-config {:count 10
-                                  :y-rand-percentage 1/2
-                                  :y-length-range [10 70]
-                                  :x-spread-range [100 400]
+                                  :y-rand-percentage 1/3
+                                  :y-length-range [40 60]
+                                  :x-spread-range [100 600]
                                   :x-length-range [50 100]}
 
                    :distortion-intensity 40
@@ -41,10 +41,10 @@
                    :draw-bones false
                    :draw-frames false
                    :draw-wings true
-                   :draw-fault true
+                   :draw-fault false
                    :draw-distortion false
                    :outline-only false
-                   :two-phase-shapes true}))
+                   :two-phase-shapes false}))
 
 (defn flip [k]
   (let [v (not (k @config))]
@@ -182,7 +182,7 @@
         lw (- lx fx)
         xoff (- (/ (- sw lw) 2) fx)]
     ;;(q/background 128)
-    (q/background 225)
+    (q/background 255)
     (q/fill 255 255 255)
     (q/stroke 255 255 255)
     (q/push-matrix)
@@ -195,10 +195,11 @@
       (if (:outline-only @config)
         (do
           (q/no-fill)
-          (q/stroke 0))
+          (q/stroke 12 110 191)
+          (q/stroke-weight 1))
         (do
-          (q/fill 0)
-          (q/stroke 225)))
+          (q/fill 12 110 191)
+          (q/stroke 255)))
       (if (:two-phase-shapes @config)
         (do
           (q/push-style)
