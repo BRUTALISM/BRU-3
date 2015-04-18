@@ -2,6 +2,8 @@
 /classes
 /checkouts
 /bin
+/out
+/repl
 pom.xml
 pom.xml.asc
 *.jar
