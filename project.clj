@@ -8,9 +8,12 @@
                  [org.clojure/clojurescript "0.0-3196"]
                  [lein-light-nrepl "0.1.0"]
                  [quil "2.2.4"]
-                 [thi.ng/geom "0.0.743"]]
+                 [thi.ng/geom "0.0.743"]
+                 [compojure "1.3.3"]]
 
-  :plugins [[lein-cljsbuild "1.0.5"]]
+  :plugins [[lein-cljsbuild "1.0.5"]
+            [lein-ring "0.9.3"]]
+
   :source-paths ["src/clj" "src/cljs"]
   :clean-targets ["resources/public/js/logo.js"]
 
@@ -28,5 +31,7 @@
 
                            ;; generated JS code prettyfication
                            :pretty-print true}}]}
+
+  :ring {:handler bru-3.routes/handler}
 
   :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]})
