@@ -30792,6 +30792,20 @@ bru_3.logo.camera = new THREE.PerspectiveCamera(75, bru_3.logo.width / bru_3.log
 bru_3.logo.renderer = new THREE.WebGLRenderer;
 bru_3.logo.renderer.setSize(bru_3.logo.width, bru_3.logo.height);
 document.body.appendChild(bru_3.logo.renderer.domElement);
+bru_3.logo.geometry = new THREE.BoxGeometry(1, 1, 1);
+bru_3.logo.material = new THREE.MeshBasicMaterial(function() {
+  var obj6294 = {"color":65280};
+  return obj6294;
+}());
+bru_3.logo.cube = new THREE.Mesh(bru_3.logo.geometry, bru_3.logo.material);
+bru_3.logo.scene.add(bru_3.logo.cube);
+bru_3.logo.camera.position.set(0, 0, 5);
+bru_3.logo.render = function bru_3$logo$render() {
+  requestAnimationFrame(bru_3$logo$render);
+  bru_3.logo.cube.rotation.set(.1 + bru_3.logo.cube.rotation.x, .102 + bru_3.logo.cube.rotation.y, 0);
+  return bru_3.logo.renderer.render(bru_3.logo.scene, bru_3.logo.camera);
+};
+bru_3.logo.render.call(null);
 goog.provide("goog.labs.userAgent.util");
 goog.require("goog.string");
 goog.labs.userAgent.util.getNativeUserAgentString_ = function() {
