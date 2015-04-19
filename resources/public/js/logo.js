@@ -30785,7 +30785,13 @@ cljs.core.test = function cljs$core$test(v) {
 };
 goog.provide("bru_3.logo");
 goog.require("cljs.core");
-document.write("Hello, ClojureScript!");
+bru_3.logo.width = window.innerWidth;
+bru_3.logo.height = window.innerHeight;
+bru_3.logo.scene = new THREE.Scene;
+bru_3.logo.camera = new THREE.PerspectiveCamera(75, bru_3.logo.width / bru_3.logo.height, .1, 1E3);
+bru_3.logo.renderer = new THREE.WebGLRenderer;
+bru_3.logo.renderer.setSize(bru_3.logo.width, bru_3.logo.height);
+document.body.appendChild(bru_3.logo.renderer.domElement);
 goog.provide("goog.labs.userAgent.util");
 goog.require("goog.string");
 goog.labs.userAgent.util.getNativeUserAgentString_ = function() {
