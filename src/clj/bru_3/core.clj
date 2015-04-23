@@ -27,8 +27,8 @@
 
                    :fault-config {:count 10
                                   :y-rand-percentage 1/3
-                                  :y-length-range [40 60]
-                                  :x-spread-range [100 600]
+                                  :y-length-range [20 60]
+                                  :x-spread-range [10 300]
                                   :x-length-range [50 100]}
 
                    :distortion-intensity 40
@@ -43,7 +43,7 @@
                    :draw-wings true
                    :draw-fault false
                    :draw-distortion false
-                   :outline-only false
+                   :outline-only true
                    :two-phase-shapes false}))
 
 (defn flip [k]
