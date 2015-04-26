@@ -233,6 +233,7 @@
 (q/defsketch bru-3
   :title "BRU-3"
   :size [1200 400]
+  :renderer :opengl
   :setup setup
   :update update
   :draw draw
