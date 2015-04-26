@@ -26,12 +26,12 @@
                                 :sharpness 1/9}
 
                    :fault-config {:count 10
-                                  :y-rand-percentage 1/3
+                                  :y-rand-percentage 5/6
                                   :y-length-range [20 60]
                                   :x-spread-range [10 300]
                                   :x-length-range [50 100]}
 
-                   :distortion-intensity 40
+                   :distortion-intensity 60
                    :distortion-xresolution 12
                    :distortion-yresolution 4
 
@@ -182,7 +182,7 @@
         lw (- lx fx)
         xoff (- (/ (- sw lw) 2) fx)]
     ;;(q/background 128)
-    (q/background 255)
+    (q/background 2 72 115)
     (q/fill 255 255 255)
     (q/stroke 255 255 255)
     (q/push-matrix)
@@ -195,11 +195,13 @@
       (if (:outline-only @config)
         (do
           (q/no-fill)
-          (q/stroke 12 110 191)
+          ;;(q/stroke 12 110 191)
+          (q/stroke 5 242 219)
+          ;;(q/stroke 242 80 93)
           (q/stroke-weight 1))
         (do
-          (q/fill 12 110 191)
-          (q/stroke 255)))
+          (q/stroke 5 242 219)
+          (q/fill 4 173 191)))
       (if (:two-phase-shapes @config)
         (do
           (q/push-style)

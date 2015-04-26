@@ -1,6 +1,5 @@
 - state generation code in a separate namespace
 - screen resolution-independent generation and config
-- meaningful distortion (generated using rules, not random)
 - CLJS/WebGL frontend
 - SVG export
 - victory
