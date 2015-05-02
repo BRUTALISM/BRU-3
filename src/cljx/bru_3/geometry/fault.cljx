@@ -26,7 +26,7 @@
         (let [x1 (+ x (rand-range xs1 xs2))
               x2 (+ x1 (rand-range xl1 xl2))
               y1 (randy)
-              rs (if (> 1/2 (rand)) 1 -1)
+              rs (if (> 0.5 (rand)) 1 -1)
               y2 (+ y1 (* rs (rand-range yl1 yl2)))]
           (recur (conj faults (l/line2 x1 y1 x2 y2))
                  (dec i)

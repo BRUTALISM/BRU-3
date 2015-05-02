@@ -49,7 +49,7 @@
           dir (g/normalize d)
           offset (g/* dir (* l in))
           tip (g/+ v offset)
-          intro (g/mix (g/mix tip v 2/3) (g/+ pp offset) b)]
+          intro (g/mix (g/mix tip v 0.6666) (g/+ pp offset) b)]
       (if spike [intro tip] [tip intro]))))
 
 (defn frame->face [conf [fr l]]

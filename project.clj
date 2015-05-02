@@ -10,18 +10,28 @@
                  [quil "2.2.5"]
                  [thi.ng/geom "0.0.743"]]
 
-  :plugins [[lein-cljsbuild "1.0.5"]]
-  :hooks [leiningen.cljsbuild]
+  :source-paths ["src/cljx"]
 
-  :source-paths ["src/clj" "src/cljs"]
+  :profiles {:dev {:plugins [[com.keminglabs/cljx "0.6.0"]
+                             [lein-cljsbuild "1.0.5"]]}}
+
+  :auto-clean false
+  :cljx {:builds [{:source-paths ["src/cljx"]
+                   :output-path "target/classes"
+                   :rules :clj}
+
+                  {:source-paths ["src/cljx"]
+                   :output-path "target/classes"
+                   :rules :cljs}]}
 
   :cljsbuild {:builds
-              [{:source-paths ["src/clj" "src/cljs"]
-
+              [{:source-paths ["target/classes" "src/cljs"]
                 :compiler {:output-to "web/js/logo.js"
                            :output-dir "web/js"
                            :main "bru-3.logo"
                            :optimizations :advanced
                            :pretty-print true}}]}
+
+  :prep-tasks [["cljx" "once"] "javac" "compile"]
 
   :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]})

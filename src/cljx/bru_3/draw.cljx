@@ -1,4 +1,4 @@
-(ns bru-3.core
+(ns bru-3.draw
   (:require [quil.core :as q]
             [quil.middleware :as m]
             [thi.ng.geom.core :as g]
@@ -21,12 +21,12 @@
                    :length-bounds [50 100]
                    :max-angle 20
                    :frame-bone-randomization 0.3
-                   :wings-conf {:bite 1/30
-                                :indent 1/3
-                                :sharpness 1/9}
+                   :wings-conf {:bite 0.0333
+                                :indent 0.3333
+                                :sharpness 0.1111}
 
                    :fault-config {:count 10
-                                  :y-rand-percentage 5/6
+                                  :y-rand-percentage 0.8333
                                   :y-length-range [20 60]
                                   :x-spread-range [10 300]
                                   :x-length-range [50 100]}
@@ -37,7 +37,7 @@
 
                    ;; presentation
                    :dot-size 5
-                   :distortion-field-step 50.0
+                   :distortion-field-step 50
                    :draw-bones false
                    :draw-frames false
                    :draw-wings true
@@ -229,13 +229,3 @@
     :p (do (flip :two-phase-shapes) state)
     ;; TODO: Render to file.
     state))
-
-(q/defsketch bru-3
-  :title "BRU-3"
-  :size [1200 400]
-  :renderer :opengl
-  :setup setup
-  :update update
-  :draw draw
-  :key-pressed key-pressed
-  :middleware [m/fun-mode])
