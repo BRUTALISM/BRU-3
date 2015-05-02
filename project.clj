@@ -7,12 +7,12 @@
   :dependencies [[org.clojure/clojure "1.7.0-beta2"]
                  [org.clojure/clojurescript "0.0-3196"]
                  [lein-light-nrepl "0.1.0"]
-                 [quil "2.2.5"]
+                 [quil "2.2.5" :exclusions [org.clojure/clojure]]
                  [thi.ng/geom "0.0.743"]]
 
   :source-paths ["src/clj"]
 
-  :main bru_3.main
+  :main bru-3.main
 
   :profiles {:dev {:plugins [[com.keminglabs/cljx "0.6.0"]
                              [lein-cljsbuild "1.0.5"]]}}
@@ -38,4 +38,5 @@
 
   :prep-tasks [["cljx" "once"] "javac" "compile"]
 
-  :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]})
+  :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]
+                 :timeout 120000})

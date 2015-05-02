@@ -181,10 +181,9 @@
         sw (q/width)
         lw (- lx fx)
         xoff (- (/ (- sw lw) 2) fx)]
-    ;;(q/background 128)
-    (q/background 2 72 115)
-    (q/fill 255 255 255)
-    (q/stroke 255 255 255)
+    (q/background 14)
+    (q/fill 255)
+    (q/stroke 205)
     (q/push-matrix)
     ;(q/translate xoff 0)
     (when (:draw-bones @config)
@@ -192,16 +191,7 @@
     (when (:draw-frames @config)
       (doseq [frame (:frames state)] (draw-frame frame)))
     (when (:draw-wings @config)
-      (if (:outline-only @config)
-        (do
-          (q/no-fill)
-          ;;(q/stroke 12 110 191)
-          (q/stroke 5 242 219)
-          ;;(q/stroke 242 80 93)
-          (q/stroke-weight 1))
-        (do
-          (q/stroke 5 242 219)
-          (q/fill 4 173 191)))
+      (if (:outline-only @config) (q/no-fill))
       (if (:two-phase-shapes @config)
         (do
           (q/push-style)

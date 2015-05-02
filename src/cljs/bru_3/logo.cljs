@@ -7,7 +7,7 @@
   :host "bru-3"
   :title "BRU-3"
   :size [1200 400]
-  :renderer :opengl
+  ;;:renderer :opengl
   :setup d/setup
   :update d/update
   :draw d/draw
