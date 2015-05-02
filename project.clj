@@ -10,10 +10,14 @@
                  [quil "2.2.5"]
                  [thi.ng/geom "0.0.743"]]
 
-  :source-paths ["src/cljx"]
+  :source-paths ["src/clj"]
+
+  :main bru_3.main
 
   :profiles {:dev {:plugins [[com.keminglabs/cljx "0.6.0"]
                              [lein-cljsbuild "1.0.5"]]}}
+
+  :hooks [leiningen.cljsbuild]
 
   :auto-clean false
   :cljx {:builds [{:source-paths ["src/cljx"]

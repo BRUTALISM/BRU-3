@@ -8,10 +8,10 @@ return null;
 }));
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(options,cljs.core.constant$keyword$setup,((function (setup){
 return (function (){
-var G__16319 = quil.core.state_atom();
-var G__16320 = (function (){return (setup.cljs$core$IFn$_invoke$arity$0 ? setup.cljs$core$IFn$_invoke$arity$0() : setup.call(null));
+var G__31844 = quil.core.state_atom();
+var G__31845 = (function (){return (setup.cljs$core$IFn$_invoke$arity$0 ? setup.cljs$core$IFn$_invoke$arity$0() : setup.call(null));
 })();
-return (cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__16319,G__16320) : cljs.core.reset_BANG_.call(null,G__16319,G__16320));
+return (cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__31844,G__31845) : cljs.core.reset_BANG_.call(null,G__31844,G__31845));
 });})(setup))
 );
 });
@@ -22,8 +22,8 @@ return null;
 var update = cljs.core.constant$keyword$update.cljs$core$IFn$_invoke$arity$2(options,cljs.core.identity);
 var quil_draw = ((function (draw,update){
 return (function (){
-var G__16322 = cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(quil.core.state_atom(),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(quil.core.frame_count(),(1)))?cljs.core.identity:update));
-return (draw.cljs$core$IFn$_invoke$arity$1 ? draw.cljs$core$IFn$_invoke$arity$1(G__16322) : draw.call(null,G__16322));
+var G__31847 = cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(quil.core.state_atom(),((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(quil.core.frame_count(),(1)))?cljs.core.identity:update));
+return (draw.cljs$core$IFn$_invoke$arity$1 ? draw.cljs$core$IFn$_invoke$arity$1(G__31847) : draw.call(null,G__31847));
 });})(draw,update))
 ;
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(options,cljs.core.constant$keyword$update),cljs.core.constant$keyword$draw,quil_draw);
@@ -38,8 +38,8 @@ quil.middlewares.fun_mode.key_event = (function quil$middlewares$fun_mode$key_ev
 return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.constant$keyword$key,quil.core.key_as_keyword(),cljs.core.constant$keyword$key_DASH_code,quil.core.key_code(),cljs.core.constant$keyword$raw_DASH_key,quil.core.raw_key()], null);
 });
 quil.middlewares.fun_mode.wrap_handler = (function quil$middlewares$fun_mode$wrap_handler(){
-var G__16324 = arguments.length;
-switch (G__16324) {
+var G__31849 = arguments.length;
+switch (G__31849) {
 case 2:
 return quil.middlewares.fun_mode.wrap_handler.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -59,8 +59,8 @@ return quil.middlewares.fun_mode.wrap_handler.cljs$core$IFn$_invoke$arity$3(opti
 });
 
 quil.middlewares.fun_mode.wrap_handler.cljs$core$IFn$_invoke$arity$3 = (function (options,handler_key,event_fn){
-var temp__4420__auto__ = (function (){var G__16325 = handler_key;
-return (options.cljs$core$IFn$_invoke$arity$1 ? options.cljs$core$IFn$_invoke$arity$1(G__16325) : options.call(null,G__16325));
+var temp__4420__auto__ = (function (){var G__31850 = handler_key;
+return (options.cljs$core$IFn$_invoke$arity$1 ? options.cljs$core$IFn$_invoke$arity$1(G__31850) : options.call(null,G__31850));
 })();
 if(cljs.core.truth_(temp__4420__auto__)){
 var handler = temp__4420__auto__;
@@ -81,8 +81,8 @@ return options;
 
 quil.middlewares.fun_mode.wrap_handler.cljs$lang$maxFixedArity = 3;
 quil.middlewares.fun_mode.wrap_handlers = (function quil$middlewares$fun_mode$wrap_handlers(){
-var argseq__5264__auto__ = ((((1) < arguments.length))?(new cljs.core.IndexedSeq(Array.prototype.slice.call(arguments,(1)),(0))):null);
-return quil.middlewares.fun_mode.wrap_handlers.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__5264__auto__);
+var argseq__13647__auto__ = ((((1) < arguments.length))?(new cljs.core.IndexedSeq(Array.prototype.slice.call(arguments,(1)),(0))):null);
+return quil.middlewares.fun_mode.wrap_handlers.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__13647__auto__);
 });
 
 quil.middlewares.fun_mode.wrap_handlers.cljs$core$IFn$_invoke$arity$variadic = (function (options,handlers){
@@ -97,10 +97,10 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(quil.middlewares.fun_mode.w
 
 quil.middlewares.fun_mode.wrap_handlers.cljs$lang$maxFixedArity = (1);
 
-quil.middlewares.fun_mode.wrap_handlers.cljs$lang$applyTo = (function (seq16327){
-var G__16328 = cljs.core.first(seq16327);
-var seq16327__$1 = cljs.core.next(seq16327);
-return quil.middlewares.fun_mode.wrap_handlers.cljs$core$IFn$_invoke$arity$variadic(G__16328,seq16327__$1);
+quil.middlewares.fun_mode.wrap_handlers.cljs$lang$applyTo = (function (seq31852){
+var G__31853 = cljs.core.first(seq31852);
+var seq31852__$1 = cljs.core.next(seq31852);
+return quil.middlewares.fun_mode.wrap_handlers.cljs$core$IFn$_invoke$arity$variadic(G__31853,seq31852__$1);
 });
 quil.middlewares.fun_mode.wrap_mouse_wheel = (function quil$middlewares$fun_mode$wrap_mouse_wheel(options){
 var temp__4420__auto__ = cljs.core.constant$keyword$mouse_DASH_wheel.cljs$core$IFn$_invoke$arity$1(options);

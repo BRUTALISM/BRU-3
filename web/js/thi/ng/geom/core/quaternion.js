@@ -22,13 +22,13 @@ this.cljs$lang$protocol_mask$partition1$ = 10240;
 })
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PVectorTransform$ = true;
 
-thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PVectorTransform$transform_vector$arity$2 = (function (_,p__26421){
+thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PVectorTransform$transform_vector$arity$2 = (function (_,p__32264){
 var self__ = this;
-var vec__26422 = p__26421;
-var vx = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26422,(0),null);
-var vy = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26422,(1),null);
-var vz = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26422,(2),null);
-var v = vec__26422;
+var vec__32265 = p__32264;
+var vx = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32265,(0),null);
+var vy = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32265,(1),null);
+var vz = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32265,(2),null);
+var v = vec__32265;
 var ___$1 = this;
 var ix = (((self__.w * vx) + (self__.y * vz)) - (self__.z * vy));
 var iy = (((self__.w * vy) + (self__.z * vx)) - (self__.x * vz));
@@ -56,19 +56,19 @@ return [cljs.core.str("["),cljs.core.str(self__.x),cljs.core.str(" "),cljs.core.
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$ILookup$_lookup$arity$2 = (function (_,k){
 var self__ = this;
 var ___$1 = this;
-var G__26423 = ___$1;
-var G__26424 = k;
-var G__26425 = null;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26423,G__26424,G__26425) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26423,G__26424,G__26425));
+var G__32266 = ___$1;
+var G__32267 = k;
+var G__32268 = null;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32266,G__32267,G__32268) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32266,G__32267,G__32268));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (_,k,nf){
 var self__ = this;
 var ___$1 = this;
-var G__26426 = ___$1;
-var G__26427 = k;
-var G__26428 = nf;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26426,G__26427,G__26428) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26426,G__26427,G__26428));
+var G__32269 = ___$1;
+var G__32270 = k;
+var G__32271 = nf;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32269,G__32270,G__32271) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32269,G__32270,G__32271));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PDotProduct$ = true;
@@ -85,8 +85,8 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PNormalize$ = true;
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PNormalize$normalize$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
-var m = (function (){var G__26429 = ((((self__.x * self__.x) + (self__.y * self__.y)) + (self__.z * self__.z)) + (self__.w * self__.w));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26429) : Math.sqrt.call(null,G__26429));
+var m = (function (){var G__32272 = ((((self__.x * self__.x) + (self__.y * self__.y)) + (self__.z * self__.z)) + (self__.w * self__.w));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32272) : Math.sqrt.call(null,G__32272));
 })();
 if((m > thi.ng.common.math.core._STAR_eps_STAR_)){
 return (new thi.ng.geom.core.quaternion.Quat4((self__.x / m),(self__.y / m),(self__.z / m),(self__.w / m),(-1)));
@@ -101,11 +101,11 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PRotate3D$rotate_x$
 var self__ = this;
 var ___$1 = this;
 var t = (theta / 2.0);
-var s = (function (){var G__26430 = t;
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26430) : Math.sin.call(null,G__26430));
+var s = (function (){var G__32273 = t;
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32273) : Math.sin.call(null,G__32273));
 })();
-var c = (function (){var G__26431 = t;
-return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__26431) : Math.cos.call(null,G__26431));
+var c = (function (){var G__32274 = t;
+return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__32274) : Math.cos.call(null,G__32274));
 })();
 return (new thi.ng.geom.core.quaternion.Quat4(((self__.x * c) + (self__.w * s)),((self__.y * c) + (self__.z * s)),((self__.z * c) - (self__.y * s)),((self__.w * c) - (self__.x * s)),(-1)));
 });
@@ -114,11 +114,11 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PRotate3D$rotate_y$
 var self__ = this;
 var ___$1 = this;
 var t = (theta / 2.0);
-var s = (function (){var G__26432 = t;
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26432) : Math.sin.call(null,G__26432));
+var s = (function (){var G__32275 = t;
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32275) : Math.sin.call(null,G__32275));
 })();
-var c = (function (){var G__26433 = t;
-return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__26433) : Math.cos.call(null,G__26433));
+var c = (function (){var G__32276 = t;
+return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__32276) : Math.cos.call(null,G__32276));
 })();
 return (new thi.ng.geom.core.quaternion.Quat4(((self__.x * c) - (self__.z * s)),((self__.y * c) + (self__.w * s)),((self__.z * c) + (self__.x * s)),((self__.w * c) - (self__.y * s)),(-1)));
 });
@@ -127,11 +127,11 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PRotate3D$rotate_z$
 var self__ = this;
 var ___$1 = this;
 var t = (theta / 2.0);
-var s = (function (){var G__26434 = t;
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26434) : Math.sin.call(null,G__26434));
+var s = (function (){var G__32277 = t;
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32277) : Math.sin.call(null,G__32277));
 })();
-var c = (function (){var G__26435 = t;
-return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__26435) : Math.cos.call(null,G__26435));
+var c = (function (){var G__32278 = t;
+return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__32278) : Math.cos.call(null,G__32278));
 })();
 return (new thi.ng.geom.core.quaternion.Quat4(((self__.x * c) + (self__.y * s)),((self__.y * c) - (self__.x * s)),((self__.z * c) + (self__.w * s)),((self__.w * c) - (self__.z * s)),(-1)));
 });
@@ -147,8 +147,8 @@ return (new thi.ng.geom.core.quaternion.Quat4((- self__.x),(- self__.y),(- self_
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IIndexed$_nth$arity$2 = (function (_,k){
 var self__ = this;
 var ___$1 = this;
-var G__26436 = (k | (0));
-switch (G__26436) {
+var G__32279 = (k | (0));
+switch (G__32279) {
 case (0):
 return self__.x;
 
@@ -174,8 +174,8 @@ return thi.ng.common.error.key_error_BANG_(k);
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IIndexed$_nth$arity$3 = (function (_,k,nf){
 var self__ = this;
 var ___$1 = this;
-var G__26437 = (k | (0));
-switch (G__26437) {
+var G__32280 = (k | (0));
+switch (G__32280) {
 case (0):
 return self__.x;
 
@@ -201,8 +201,8 @@ return nf;
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IVector$_assoc_n$arity$3 = (function (_,k,v){
 var self__ = this;
 var ___$1 = this;
-var G__26438 = (k | (0));
-switch (G__26438) {
+var G__32281 = (k | (0));
+switch (G__32281) {
 case (0):
 return (new thi.ng.geom.core.quaternion.Quat4(v,self__.y,self__.z,self__.w,(-1)));
 
@@ -360,10 +360,10 @@ return !((new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (_,k,v){
 var self__ = this;
 var ___$1 = this;
-var G__26446 = ___$1;
-var G__26447 = k;
-var G__26448 = v;
-return (thi.ng.geom.core.quaternion.swizzle4_assoc.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4_assoc.cljs$core$IFn$_invoke$arity$3(G__26446,G__26447,G__26448) : thi.ng.geom.core.quaternion.swizzle4_assoc.call(null,G__26446,G__26447,G__26448));
+var G__32289 = ___$1;
+var G__32290 = k;
+var G__32291 = v;
+return (thi.ng.geom.core.quaternion.swizzle4_assoc.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4_assoc.cljs$core$IFn$_invoke$arity$3(G__32289,G__32290,G__32291) : thi.ng.geom.core.quaternion.swizzle4_assoc.call(null,G__32289,G__32290,G__32291));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$ISeqable$_seq$arity$1 = (function (_){
@@ -391,10 +391,10 @@ return thi.ng.geom.core.as_matrix.cljs$core$IFn$_invoke$arity$2(___$1,null);
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PMatrixConvert$as_matrix$arity$2 = (function (_,opts){
 var self__ = this;
 var ___$1 = this;
-var vec__26449 = cljs.core.constant$keyword$translate.cljs$core$IFn$_invoke$arity$1(opts);
-var tx = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26449,(0),null);
-var ty = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26449,(1),null);
-var tz = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26449,(2),null);
+var vec__32292 = cljs.core.constant$keyword$translate.cljs$core$IFn$_invoke$arity$1(opts);
+var tx = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32292,(0),null);
+var ty = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32292,(1),null);
+var tz = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32292,(2),null);
 var x2 = (self__.x + self__.x);
 var y2 = (self__.y + self__.y);
 var z2 = (self__.z + self__.z);
@@ -407,21 +407,21 @@ var zz = (self__.z * z2);
 var wx = (self__.w * x2);
 var wy = (self__.w * y2);
 var wz = (self__.w * z2);
-return (new thi.ng.geom.core.matrix.Matrix44((1.0 - (yy + zz)),(xy + wz),(xz - wy),0.0,(xy - wz),(1.0 - (xx + zz)),(yz + wx),0.0,(xz + wy),(yz - wx),(1.0 - (xx + yy)),0.0,(function (){var or__12575__auto__ = tx;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+return (new thi.ng.geom.core.matrix.Matrix44((1.0 - (yy + zz)),(xy + wz),(xz - wy),0.0,(xy - wz),(1.0 - (xx + zz)),(yz + wx),0.0,(xz + wy),(yz - wx),(1.0 - (xx + yy)),0.0,(function (){var or__12607__auto__ = tx;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return 0.0;
 }
-})(),(function (){var or__12575__auto__ = ty;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+})(),(function (){var or__12607__auto__ = ty;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return 0.0;
 }
-})(),(function (){var or__12575__auto__ = tz;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+})(),(function (){var or__12607__auto__ = tz;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return 0.0;
 }
@@ -435,62 +435,62 @@ return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMP
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.call = (function() {
-var G__26466 = null;
-var G__26466__2 = (function (self__,k){
+var G__32309 = null;
+var G__32309__2 = (function (self__,k){
 var self__ = this;
 var self____$1 = this;
 var _ = self____$1;
-var G__26450 = _;
-var G__26451 = k;
-var G__26452 = null;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26450,G__26451,G__26452) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26450,G__26451,G__26452));
+var G__32293 = _;
+var G__32294 = k;
+var G__32295 = null;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32293,G__32294,G__32295) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32293,G__32294,G__32295));
 });
-var G__26466__3 = (function (self__,k,nf){
+var G__32309__3 = (function (self__,k,nf){
 var self__ = this;
 var self____$1 = this;
 var _ = self____$1;
-var G__26453 = _;
-var G__26454 = k;
-var G__26455 = nf;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26453,G__26454,G__26455) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26453,G__26454,G__26455));
+var G__32296 = _;
+var G__32297 = k;
+var G__32298 = nf;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32296,G__32297,G__32298) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32296,G__32297,G__32298));
 });
-G__26466 = function(self__,k,nf){
+G__32309 = function(self__,k,nf){
 switch(arguments.length){
 case 2:
-return G__26466__2.call(this,self__,k);
+return G__32309__2.call(this,self__,k);
 case 3:
-return G__26466__3.call(this,self__,k,nf);
+return G__32309__3.call(this,self__,k,nf);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__26466.cljs$core$IFn$_invoke$arity$2 = G__26466__2;
-G__26466.cljs$core$IFn$_invoke$arity$3 = G__26466__3;
-return G__26466;
+G__32309.cljs$core$IFn$_invoke$arity$2 = G__32309__2;
+G__32309.cljs$core$IFn$_invoke$arity$3 = G__32309__3;
+return G__32309;
 })()
 ;
 
-thi.ng.geom.core.quaternion.Quat4.prototype.apply = (function (self__,args26420){
+thi.ng.geom.core.quaternion.Quat4.prototype.apply = (function (self__,args32263){
 var self__ = this;
 var self____$1 = this;
-return self____$1.call.apply(self____$1,[self____$1].concat(cljs.core.aclone(args26420)));
+return self____$1.call.apply(self____$1,[self____$1].concat(cljs.core.aclone(args32263)));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IFn$_invoke$arity$1 = (function (k){
 var self__ = this;
 var _ = this;
-var G__26456 = _;
-var G__26457 = k;
-var G__26458 = null;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26456,G__26457,G__26458) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26456,G__26457,G__26458));
+var G__32299 = _;
+var G__32300 = k;
+var G__32301 = null;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32299,G__32300,G__32301) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32299,G__32300,G__32301));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IFn$_invoke$arity$2 = (function (k,nf){
 var self__ = this;
 var _ = this;
-var G__26459 = _;
-var G__26460 = k;
-var G__26461 = nf;
-return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__26459,G__26460,G__26461) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__26459,G__26460,G__26461));
+var G__32302 = _;
+var G__32303 = k;
+var G__32304 = nf;
+return (thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3 ? thi.ng.geom.core.quaternion.swizzle4.cljs$core$IFn$_invoke$arity$3(G__32302,G__32303,G__32304) : thi.ng.geom.core.quaternion.swizzle4.call(null,G__32302,G__32303,G__32304));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.cljs$core$IComparable$_compare$arity$2 = (function (_,o){
@@ -534,31 +534,31 @@ return thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(___$1,q,t
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$common$math$core$PDeltaEquals$delta_EQ_$arity$3 = (function (_,q,eps){
 var self__ = this;
 var ___$1 = this;
-var and__12563__auto__ = cljs.core.sequential_QMARK_(q);
-if(and__12563__auto__){
-var and__12563__auto____$1 = ((4) === cljs.core.count(q));
-if(and__12563__auto____$1){
-var and__12563__auto____$2 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.x,cljs.core.first(q),eps);
-if(cljs.core.truth_(and__12563__auto____$2)){
-var and__12563__auto____$3 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.y,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(q,(1)),eps);
-if(cljs.core.truth_(and__12563__auto____$3)){
-var and__12563__auto____$4 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.z,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(q,(2)),eps);
-if(cljs.core.truth_(and__12563__auto____$4)){
+var and__12595__auto__ = cljs.core.sequential_QMARK_(q);
+if(and__12595__auto__){
+var and__12595__auto____$1 = ((4) === cljs.core.count(q));
+if(and__12595__auto____$1){
+var and__12595__auto____$2 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.x,cljs.core.first(q),eps);
+if(cljs.core.truth_(and__12595__auto____$2)){
+var and__12595__auto____$3 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.y,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(q,(1)),eps);
+if(cljs.core.truth_(and__12595__auto____$3)){
+var and__12595__auto____$4 = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.z,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(q,(2)),eps);
+if(cljs.core.truth_(and__12595__auto____$4)){
 return thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$3(self__.w,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(q,(3)),eps);
 } else {
-return and__12563__auto____$4;
+return and__12595__auto____$4;
 }
 } else {
-return and__12563__auto____$3;
+return and__12595__auto____$3;
 }
 } else {
-return and__12563__auto____$2;
+return and__12595__auto____$2;
 }
 } else {
-return and__12563__auto____$1;
+return and__12595__auto____$1;
 }
 } else {
-return and__12563__auto__;
+return and__12595__auto__;
 }
 });
 
@@ -567,8 +567,8 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PMagnitude$ = true;
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PMagnitude$mag$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
-var G__26462 = ((((self__.x * self__.x) + (self__.y * self__.y)) + (self__.z * self__.z)) + (self__.w * self__.w));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26462) : Math.sqrt.call(null,G__26462));
+var G__32305 = ((((self__.x * self__.x) + (self__.y * self__.y)) + (self__.z * self__.z)) + (self__.w * self__.w));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32305) : Math.sqrt.call(null,G__32305));
 });
 
 thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PMagnitude$mag_squared$arity$1 = (function (_){
@@ -589,24 +589,24 @@ thi.ng.geom.core.quaternion.Quat4.prototype.thi$ng$geom$core$PInterpolate$mix$ar
 var self__ = this;
 var ___$1 = this;
 var d = thi.ng.geom.core.dot(___$1,q);
-if(((function (){var G__26439 = d;
-return (thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1 ? thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1(G__26439) : thi.ng.common.math.core.abs.call(null,G__26439));
+if(((function (){var G__32282 = d;
+return (thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1 ? thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1(G__32282) : thi.ng.common.math.core.abs.call(null,G__32282));
 })() < 1.0)){
-var theta = (function (){var G__26441 = d;
-return (Math.acos.cljs$core$IFn$_invoke$arity$1 ? Math.acos.cljs$core$IFn$_invoke$arity$1(G__26441) : Math.acos.call(null,G__26441));
+var theta = (function (){var G__32284 = d;
+return (Math.acos.cljs$core$IFn$_invoke$arity$1 ? Math.acos.cljs$core$IFn$_invoke$arity$1(G__32284) : Math.acos.call(null,G__32284));
 })();
-var stheta = (function (){var G__26442 = ((d * (- d)) + 1.0);
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26442) : Math.sqrt.call(null,G__26442));
+var stheta = (function (){var G__32285 = ((d * (- d)) + 1.0);
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32285) : Math.sqrt.call(null,G__32285));
 })();
-var vec__26440 = ((((function (){var G__26443 = stheta;
-return (thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1 ? thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1(G__26443) : thi.ng.common.math.core.abs.call(null,G__26443));
-})() < 0.001))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0.5,0.5], null):new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (){var G__26444 = ((1.0 - t) * theta);
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26444) : Math.sin.call(null,G__26444));
-})() / stheta),((function (){var G__26445 = (t * theta);
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26445) : Math.sin.call(null,G__26445));
+var vec__32283 = ((((function (){var G__32286 = stheta;
+return (thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1 ? thi.ng.common.math.core.abs.cljs$core$IFn$_invoke$arity$1(G__32286) : thi.ng.common.math.core.abs.call(null,G__32286));
+})() < 0.001))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0.5,0.5], null):new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((function (){var G__32287 = ((1.0 - t) * theta);
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32287) : Math.sin.call(null,G__32287));
+})() / stheta),((function (){var G__32288 = (t * theta);
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32288) : Math.sin.call(null,G__32288));
 })() / stheta)], null));
-var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26440,(0),null);
-var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26440,(1),null);
+var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32283,(0),null);
+var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32283,(1),null);
 var q__$1 = q;
 return (new thi.ng.geom.core.quaternion.Quat4(((self__.x * a) + (q__$1.x * b)),((self__.y * a) + (q__$1.y * b)),((self__.z * a) + (q__$1.z * b)),((self__.w * a) + (q__$1.w * b)),(-1)));
 } else {
@@ -618,8 +618,8 @@ thi.ng.geom.core.quaternion.Quat4.cljs$lang$type = true;
 
 thi.ng.geom.core.quaternion.Quat4.cljs$lang$ctorStr = "thi.ng.geom.core.quaternion/Quat4";
 
-thi.ng.geom.core.quaternion.Quat4.cljs$lang$ctorPrWriter = (function (this__13154__auto__,writer__13155__auto__,opt__13156__auto__){
-return cljs.core._write(writer__13155__auto__,"thi.ng.geom.core.quaternion/Quat4");
+thi.ng.geom.core.quaternion.Quat4.cljs$lang$ctorPrWriter = (function (this__13186__auto__,writer__13187__auto__,opt__13188__auto__){
+return cljs.core._write(writer__13187__auto__,"thi.ng.geom.core.quaternion/Quat4");
 });
 
 thi.ng.geom.core.quaternion.__GT_Quat4 = (function thi$ng$geom$core$quaternion$__GT_Quat4(x,y,z,w,_hasheq){
@@ -628,8 +628,8 @@ return (new thi.ng.geom.core.quaternion.Quat4(x,y,z,w,_hasheq));
 
 thi.ng.geom.core.quaternion.Q = (new thi.ng.geom.core.quaternion.Quat4(0.0,0.0,0.0,1.0,(-1)));
 thi.ng.geom.core.quaternion.quat = (function thi$ng$geom$core$quaternion$quat(){
-var G__26468 = arguments.length;
-switch (G__26468) {
+var G__32311 = arguments.length;
+switch (G__32311) {
 case 0:
 return thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$0();
 
@@ -656,20 +656,20 @@ thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$0 = (function (){
 return thi.ng.geom.core.quaternion.Q;
 });
 
-thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$2 = (function (p__26469,w){
-var vec__26470 = p__26469;
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26470,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26470,(1),null);
-var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26470,(2),null);
+thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$2 = (function (p__32312,w){
+var vec__32313 = p__32312;
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32313,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32313,(1),null);
+var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32313,(2),null);
 return (new thi.ng.geom.core.quaternion.Quat4(x,y,z,w,(-1)));
 });
 
-thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$1 = (function (p__26471){
-var vec__26472 = p__26471;
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26472,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26472,(1),null);
-var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26472,(2),null);
-var w = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26472,(3),null);
+thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$1 = (function (p__32314){
+var vec__32315 = p__32314;
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32315,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32315,(1),null);
+var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32315,(2),null);
+var w = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32315,(3),null);
 return (new thi.ng.geom.core.quaternion.Quat4(x,y,z,w,(-1)));
 });
 
@@ -680,23 +680,23 @@ return (new thi.ng.geom.core.quaternion.Quat4(x,y,z,w,(-1)));
 thi.ng.geom.core.quaternion.quat.cljs$lang$maxFixedArity = 4;
 thi.ng.geom.core.quaternion.quat_from_axis_angle = (function thi$ng$geom$core$quaternion$quat_from_axis_angle(axis,theta){
 var theta__$1 = (theta / 2.0);
-return thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$1(axis),(function (){var G__26476 = theta__$1;
-return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__26476) : Math.sin.call(null,G__26476));
-})()),(function (){var G__26477 = theta__$1;
-return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__26477) : Math.cos.call(null,G__26477));
+return thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$1(axis),(function (){var G__32319 = theta__$1;
+return (Math.sin.cljs$core$IFn$_invoke$arity$1 ? Math.sin.cljs$core$IFn$_invoke$arity$1(G__32319) : Math.sin.call(null,G__32319));
+})()),(function (){var G__32320 = theta__$1;
+return (Math.cos.cljs$core$IFn$_invoke$arity$1 ? Math.cos.cljs$core$IFn$_invoke$arity$1(G__32320) : Math.cos.call(null,G__32320));
 })());
 });
 thi.ng.geom.core.quaternion.as_axis_angle = (function thi$ng$geom$core$quaternion$as_axis_angle(q){
-var vec__26481 = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(q);
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26481,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26481,(1),null);
-var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26481,(2),null);
-var w = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26481,(3),null);
-var theta = (2.0 * (function (){var G__26482 = w;
-return (Math.acos.cljs$core$IFn$_invoke$arity$1 ? Math.acos.cljs$core$IFn$_invoke$arity$1(G__26482) : Math.acos.call(null,G__26482));
+var vec__32324 = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(q);
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32324,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32324,(1),null);
+var z = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32324,(2),null);
+var w = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32324,(3),null);
+var theta = (2.0 * (function (){var G__32325 = w;
+return (Math.acos.cljs$core$IFn$_invoke$arity$1 ? Math.acos.cljs$core$IFn$_invoke$arity$1(G__32325) : Math.acos.call(null,G__32325));
 })());
-var mag = (function (){var G__26483 = (1.0 - (w * w));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26483) : Math.sqrt.call(null,G__26483));
+var mag = (function (){var G__32326 = (1.0 - (w * w));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32326) : Math.sqrt.call(null,G__32326));
 })();
 if((mag < 5.0E-4)){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$3(x,y,z),theta], null);
@@ -705,8 +705,8 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 }
 });
 thi.ng.geom.core.quaternion.quat_from_euler = (function thi$ng$geom$core$quaternion$quat_from_euler(order,alpha,beta,gamma){
-var vec__26486 = (function (){var G__26487 = (((order instanceof cljs.core.Keyword))?order.fqn:null);
-switch (G__26487) {
+var vec__32329 = (function (){var G__32330 = (((order instanceof cljs.core.Keyword))?order.fqn:null);
+switch (G__32330) {
 case "xyz":
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [thi.ng.geom.core.vector.V3X,thi.ng.geom.core.vector.V3Y,thi.ng.geom.core.vector.V3Z], null);
 
@@ -736,35 +736,35 @@ return thi.ng.common.error.illegal_arg_BANG_.cljs$core$IFn$_invoke$arity$1(order
 
 }
 })();
-var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26486,(0),null);
-var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26486,(1),null);
-var c = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26486,(2),null);
+var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32329,(0),null);
+var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32329,(1),null);
+var c = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32329,(2),null);
 return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$3(thi.ng.geom.core.quaternion.quat_from_axis_angle(a,alpha),thi.ng.geom.core.quaternion.quat_from_axis_angle(b,beta),thi.ng.geom.core.quaternion.quat_from_axis_angle(c,gamma));
 });
 thi.ng.geom.core.quaternion.quat_from_matrix = (function thi$ng$geom$core$quaternion$quat_from_matrix(m){
 var trace = ((m.m00 + m.m11) + m.m22);
 if((trace > (0))){
-var s = (0.5 / (function (){var G__26493 = (trace + (1));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26493) : Math.sqrt.call(null,G__26493));
+var s = (0.5 / (function (){var G__32336 = (trace + (1));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32336) : Math.sqrt.call(null,G__32336));
 })());
 return (new thi.ng.geom.core.quaternion.Quat4(((m.m12 - m.m21) * s),((m.m20 - m.m02) * s),((m.m01 - m.m10) * s),(0.25 / s),(-1)));
 } else {
 if(((m.m00 > m.m11)) && ((m.m00 > m.m22))){
-var s = (2.0 * (function (){var G__26494 = (((m.m00 - m.m11) - m.m22) + (1));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26494) : Math.sqrt.call(null,G__26494));
+var s = (2.0 * (function (){var G__32337 = (((m.m00 - m.m11) - m.m22) + (1));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32337) : Math.sqrt.call(null,G__32337));
 })());
 var s_SINGLEQUOTE_ = ((1) / s);
 return (new thi.ng.geom.core.quaternion.Quat4((0.25 * s),((m.m10 + m.m01) * s_SINGLEQUOTE_),((m.m20 + m.m02) * s_SINGLEQUOTE_),((m.m12 - m.m21) * s_SINGLEQUOTE_),(-1)));
 } else {
 if((m.m11 > m.m22)){
-var s = (2.0 * (function (){var G__26495 = (((m.m11 - m.m22) - m.m00) + (1));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26495) : Math.sqrt.call(null,G__26495));
+var s = (2.0 * (function (){var G__32338 = (((m.m11 - m.m22) - m.m00) + (1));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32338) : Math.sqrt.call(null,G__32338));
 })());
 var s_SINGLEQUOTE_ = ((1) / s);
 return (new thi.ng.geom.core.quaternion.Quat4(((m.m10 + m.m01) * s_SINGLEQUOTE_),(0.25 * s),((m.m21 + m.m12) * s_SINGLEQUOTE_),((m.m20 - m.m02) * s_SINGLEQUOTE_),(-1)));
 } else {
-var s = (2.0 * (function (){var G__26496 = (((m.m22 - m.m00) - m.m11) + (1));
-return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__26496) : Math.sqrt.call(null,G__26496));
+var s = (2.0 * (function (){var G__32339 = (((m.m22 - m.m00) - m.m11) + (1));
+return (Math.sqrt.cljs$core$IFn$_invoke$arity$1 ? Math.sqrt.cljs$core$IFn$_invoke$arity$1(G__32339) : Math.sqrt.call(null,G__32339));
 })());
 var s_SINGLEQUOTE_ = ((1) / s);
 return (new thi.ng.geom.core.quaternion.Quat4(((m.m20 + m.m02) * s_SINGLEQUOTE_),((m.m21 + m.m12) * s_SINGLEQUOTE_),(0.25 * s),((m.m01 - m.m10) * s_SINGLEQUOTE_),(-1)));
@@ -776,15 +776,15 @@ thi.ng.geom.core.quaternion.alignment_quat = (function thi$ng$geom$core$quaterni
 var from__$1 = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(from);
 var to__$1 = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(to);
 var axis = thi.ng.geom.core.cross(from__$1,to__$1);
-var theta = (function (){var G__26499 = thi.ng.geom.core.mag(axis);
-var G__26500 = thi.ng.geom.core.dot(from__$1,to__$1);
-return (Math.atan2.cljs$core$IFn$_invoke$arity$2 ? Math.atan2.cljs$core$IFn$_invoke$arity$2(G__26499,G__26500) : Math.atan2.call(null,G__26499,G__26500));
+var theta = (function (){var G__32342 = thi.ng.geom.core.mag(axis);
+var G__32343 = thi.ng.geom.core.dot(from__$1,to__$1);
+return (Math.atan2.cljs$core$IFn$_invoke$arity$2 ? Math.atan2.cljs$core$IFn$_invoke$arity$2(G__32342,G__32343) : Math.atan2.call(null,G__32342,G__32343));
 })();
 return thi.ng.geom.core.quaternion.quat_from_axis_angle(axis,theta);
 });
 thi.ng.geom.core.quaternion.lookup4 = (function thi$ng$geom$core$quaternion$lookup4(_,k,nf){
-var G__26502 = k;
-switch (G__26502) {
+var G__32345 = k;
+switch (G__32345) {
 case "x":
 return _.x;
 
@@ -802,9 +802,9 @@ return _.w;
 
 break;
 default:
-var or__12575__auto__ = nf;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var or__12607__auto__ = nf;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.common.error.key_error_BANG_(k);
 }
@@ -813,8 +813,8 @@ return thi.ng.common.error.key_error_BANG_(k);
 });
 thi.ng.geom.core.quaternion.swizzle4 = (function thi$ng$geom$core$quaternion$swizzle4(_,k,default$){
 if(typeof k === 'number'){
-var G__26507 = (k | (0));
-switch (G__26507) {
+var G__32350 = (k | (0));
+switch (G__32350) {
 case (0):
 return _.x;
 
@@ -832,17 +832,17 @@ return _.w;
 
 break;
 default:
-var or__12575__auto__ = default$;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var or__12607__auto__ = default$;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.common.error.key_error_BANG_(k);
 }
 
 }
 } else {
-var G__26508 = (((k instanceof cljs.core.Keyword))?k.fqn:null);
-switch (G__26508) {
+var G__32351 = (((k instanceof cljs.core.Keyword))?k.fqn:null);
+switch (G__32351) {
 case "x":
 return _.x;
 
@@ -862,8 +862,8 @@ break;
 default:
 var n = cljs.core.name(k);
 var c = cljs.core.count(n);
-var G__26509 = c;
-switch (G__26509) {
+var G__32352 = c;
+switch (G__32352) {
 case (2):
 return thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.quaternion.lookup4(_,cljs.core.first(n),default$),thi.ng.geom.core.quaternion.lookup4(_,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(n,(1)),default$));
 
@@ -877,9 +877,9 @@ return (new thi.ng.geom.core.quaternion.Quat4(thi.ng.geom.core.quaternion.lookup
 
 break;
 default:
-var or__12575__auto__ = default$;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var or__12607__auto__ = default$;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.common.error.key_error_BANG_(k);
 }
@@ -898,20 +898,20 @@ var i = (0);
 var n__$1 = n;
 while(true){
 if(cljs.core.truth_(n__$1)){
-var G__26519 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(acc,(function (){var G__26516 = cljs.core.first(n__$1);
-return (keymap.cljs$core$IFn$_invoke$arity$1 ? keymap.cljs$core$IFn$_invoke$arity$1(G__26516) : keymap.call(null,G__26516));
-})(),(function (){var G__26517 = i;
-return (v.cljs$core$IFn$_invoke$arity$1 ? v.cljs$core$IFn$_invoke$arity$1(G__26517) : v.call(null,G__26517));
+var G__32362 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(acc,(function (){var G__32359 = cljs.core.first(n__$1);
+return (keymap.cljs$core$IFn$_invoke$arity$1 ? keymap.cljs$core$IFn$_invoke$arity$1(G__32359) : keymap.call(null,G__32359));
+})(),(function (){var G__32360 = i;
+return (v.cljs$core$IFn$_invoke$arity$1 ? v.cljs$core$IFn$_invoke$arity$1(G__32360) : v.call(null,G__32360));
 })());
-var G__26520 = (i + (1));
-var G__26521 = cljs.core.next(n__$1);
-acc = G__26519;
-i = G__26520;
-n__$1 = G__26521;
+var G__32363 = (i + (1));
+var G__32364 = cljs.core.next(n__$1);
+acc = G__32362;
+i = G__32363;
+n__$1 = G__32364;
 continue;
 } else {
-var G__26518 = acc;
-return (ctor.cljs$core$IFn$_invoke$arity$1 ? ctor.cljs$core$IFn$_invoke$arity$1(G__26518) : ctor.call(null,G__26518));
+var G__32361 = acc;
+return (ctor.cljs$core$IFn$_invoke$arity$1 ? ctor.cljs$core$IFn$_invoke$arity$1(G__32361) : ctor.call(null,G__32361));
 }
 break;
 }
@@ -921,8 +921,8 @@ return thi.ng.common.error.key_error_BANG_(k);
 });
 thi.ng.geom.core.quaternion.swizzle4_assoc = (function thi$ng$geom$core$quaternion$swizzle4_assoc(_,k,v){
 if(typeof k === 'number'){
-var G__26524 = (k | (0));
-switch (G__26524) {
+var G__32367 = (k | (0));
+switch (G__32367) {
 case (0):
 return (new thi.ng.geom.core.quaternion.Quat4(v,_.y,_.z,_.w,(-1)));
 
@@ -944,8 +944,8 @@ return thi.ng.common.error.key_error_BANG_(k);
 
 }
 } else {
-var G__26525 = (((k instanceof cljs.core.Keyword))?k.fqn:null);
-switch (G__26525) {
+var G__32368 = (((k instanceof cljs.core.Keyword))?k.fqn:null);
+switch (G__32368) {
 case "x":
 return (new thi.ng.geom.core.quaternion.Quat4(v,_.y,_.z,_.w,(-1)));
 

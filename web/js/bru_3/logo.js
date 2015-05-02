@@ -9,8 +9,8 @@ return quil.sketch.sketch.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_s
 });
 goog.exportSymbol('bru_3.logo.bru_3', bru_3.logo.bru_3);
 
-if(cljs.core.truth_(cljs.core.some((function (p1__8665__8666__auto__){
-return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$no_DASH_start,p1__8665__8666__auto__);
+if(cljs.core.truth_(cljs.core.some((function (p1__8681__8682__auto__){
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.constant$keyword$no_DASH_start,p1__8681__8682__auto__);
 }),null))){
 } else {
 quil.sketch.add_sketch_to_init_list(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.constant$keyword$fn,bru_3.logo.bru_3,cljs.core.constant$keyword$host_DASH_id,"bru-3"], null));

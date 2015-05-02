@@ -1,5 +1,6 @@
 (ns bru-3.geometry.distortion
-  (:require [thi.ng.geom.core :as g]
+  (:require [bru-3.math :as m]
+            [thi.ng.geom.core :as g]
             [thi.ng.geom.core.vector :as v]))
 
 (defn field
@@ -21,9 +22,9 @@
                          clp (:points (closest-line v))
                          clv (g/normalize (apply g/- (reverse clp)))
                          tv (g/- v (clp 0))
-                         s (Math/signum (g/cross tv clv))
-                         amax (* 1 Math/PI) ;; TODO: should be a param!
-                         a (* s (+ (/ (- Math/PI amax) 2)
+                         s (m/signum (g/cross tv clv))
+                         amax (* 1 m/PI) ;; TODO: should be a param!
+                         a (* s (+ (/ (- m/PI amax) 2)
                                    (* (rand) amax)))]
                      (g/rotate clv a)))))))))
 
@@ -37,11 +38,11 @@
         ycount (count (first vf))
         xtr (* (dec xcount) (/ x xmax))
         ytr (* (dec ycount) (/ y ymax))
-        lx (int (Math/floor xtr))
-        ux (int (Math/ceil xtr))
+        lx (int (m/floor xtr))
+        ux (int (m/ceil xtr))
         tx (- xtr lx)
-        ly (int (Math/floor ytr))
-        uy (int (Math/ceil ytr))
+        ly (int (m/floor ytr))
+        uy (int (m/ceil ytr))
         ty (- ytr ly)]
     (->
       ;; g/+ supports a maximum of 3 args so it needs to be split into two ops

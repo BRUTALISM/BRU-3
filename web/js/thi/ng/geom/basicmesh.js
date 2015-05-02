@@ -69,8 +69,8 @@ thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PEdgeAccess$ = true;
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PEdgeAccess$edges$arity$1 = (function (_){
 var ___$1 = this;
 return cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentHashSet.EMPTY,cljs.core.comp.cljs$core$IFn$_invoke$arity$2(cljs.core.mapcat.cljs$core$IFn$_invoke$arity$1(((function (___$1){
-return (function (p1__24381_SHARP_){
-return thi.ng.common.data.core.successive_nth.cljs$core$IFn$_invoke$arity$2((2),cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__24381_SHARP_,cljs.core.first(p1__24381_SHARP_)));
+return (function (p1__24387_SHARP_){
+return thi.ng.common.data.core.successive_nth.cljs$core$IFn$_invoke$arity$2((2),cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__24387_SHARP_,cljs.core.first(p1__24387_SHARP_)));
 });})(___$1))
 ),cljs.core.map.cljs$core$IFn$_invoke$arity$1(cljs.core.set)),cljs.core.constant$keyword$faces.cljs$core$IFn$_invoke$arity$1(___$1));
 });
@@ -106,10 +106,10 @@ var faces = cljs.core.constant$keyword$faces.cljs$core$IFn$_invoke$arity$1(___$1
 while(true){
 if(cljs.core.truth_(faces)){
 var f = cljs.core.first(faces);
-var G__24387 = cljs.core.assoc_BANG_.cljs$core$IFn$_invoke$arity$3(fnorms,f,thi.ng.geom.core.utils.ortho_normal.cljs$core$IFn$_invoke$arity$1(f));
-var G__24388 = cljs.core.next(faces);
-fnorms = G__24387;
-faces = G__24388;
+var G__24393 = cljs.core.assoc_BANG_.cljs$core$IFn$_invoke$arity$3(fnorms,f,thi.ng.geom.core.utils.ortho_normal.cljs$core$IFn$_invoke$arity$1(f));
+var G__24394 = cljs.core.next(faces);
+fnorms = G__24393;
+faces = G__24394;
 continue;
 } else {
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(___$1,cljs.core.constant$keyword$fnormals,cljs.core.persistent_BANG_(fnorms));
@@ -145,8 +145,8 @@ return thi.ng.geom.basicmesh.add_face(___$1,f);
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PFaceAccess$vertex_faces$arity$2 = (function (_,v){
 var ___$1 = this;
 return cljs.core.filter.cljs$core$IFn$_invoke$arity$2(((function (___$1){
-return (function (p1__24382_SHARP_){
-return (thi.ng.common.data.core.index_of(p1__24382_SHARP_,v) >= (0));
+return (function (p1__24388_SHARP_){
+return (thi.ng.common.data.core.index_of(p1__24388_SHARP_,v) >= (0));
 });})(___$1))
 ,cljs.core.constant$keyword$faces.cljs$core$IFn$_invoke$arity$1(___$1));
 });
@@ -161,8 +161,8 @@ thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PTranslate$ = true;
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PTranslate$translate$arity$2 = (function (_,t){
 var ___$1 = this;
 return thi.ng.geom.types.utils.transform_mesh(___$1,thi.ng.geom.basicmesh.add_face,((function (___$1){
-return (function (p1__24386_SHARP_){
-return thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$2(p1__24386_SHARP_,t);
+return (function (p1__24392_SHARP_){
+return thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$2(p1__24392_SHARP_,t);
 });})(___$1))
 );
 });
@@ -179,8 +179,8 @@ thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PScale$ = true;
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PScale$scale$arity$2 = (function (_,s){
 var ___$1 = this;
 return thi.ng.geom.types.utils.transform_mesh(___$1,thi.ng.geom.basicmesh.add_face,((function (___$1){
-return (function (p1__24383_SHARP_){
-return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(p1__24383_SHARP_,s);
+return (function (p1__24389_SHARP_){
+return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(p1__24389_SHARP_,s);
 });})(___$1))
 );
 });
@@ -188,8 +188,8 @@ return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(p1__24383_SHARP_,s)
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PScale$scale$arity$4 = (function (_,sx,sy,sz){
 var ___$1 = this;
 return thi.ng.geom.types.utils.transform_mesh(___$1,thi.ng.geom.basicmesh.add_face,((function (___$1){
-return (function (p1__24384_SHARP_){
-return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$4(p1__24384_SHARP_,sx,sy,sz);
+return (function (p1__24390_SHARP_){
+return thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$4(p1__24390_SHARP_,sx,sy,sz);
 });})(___$1))
 );
 });
@@ -198,8 +198,8 @@ thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PScale$scale_size$arity$2
 var ___$1 = this;
 var c = thi.ng.geom.core.centroid(___$1);
 return thi.ng.geom.types.utils.transform_mesh(___$1,thi.ng.geom.basicmesh.add_face,((function (c,___$1){
-return (function (p1__24385_SHARP_){
-return thi.ng.geom.core.madd(thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(p1__24385_SHARP_,c),s,c);
+return (function (p1__24391_SHARP_){
+return thi.ng.geom.core.madd(thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(p1__24391_SHARP_,c),s,c);
 });})(c,___$1))
 );
 });
@@ -213,9 +213,9 @@ return thi.ng.geom.core.tessellate.cljs$core$IFn$_invoke$arity$2(___$1,cljs.core
 
 thi.ng.geom.types.BasicMesh.prototype.thi$ng$geom$core$PTessellate$tessellate$arity$2 = (function (_,opts){
 var ___$1 = this;
-return thi.ng.geom.types.utils.map_mesh((function (){var or__12575__auto__ = cljs.core.constant$keyword$fn.cljs$core$IFn$_invoke$arity$1(opts);
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+return thi.ng.geom.types.utils.map_mesh((function (){var or__12607__auto__ = cljs.core.constant$keyword$fn.cljs$core$IFn$_invoke$arity$1(opts);
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.geom.core.utils.tessellate_with_first;
 }

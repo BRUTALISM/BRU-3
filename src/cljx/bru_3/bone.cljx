@@ -1,5 +1,6 @@
 (ns bru-3.bone
   (:require [bru-3.decomposition :as d]
+            [bru-3.math :as m]
             [thi.ng.geom.core :as g]
             [thi.ng.geom.core.vector :as v]))
 
@@ -7,8 +8,8 @@
   d/Decomposition
   (vertices [this]
     (let [{[x y] :position length :length angle :angle} this
-          xdist (* (/ length 2) (Math/sin (Math/toRadians angle)))
-          ydist (* (/ length 2) (Math/cos (Math/toRadians angle)))]
+          xdist (* (/ length 2) (m/sin (m/to-radians angle)))
+          ydist (* (/ length 2) (m/cos (m/to-radians angle)))]
       [(v/vec2 (- x xdist) (- y ydist)) (v/vec2 (+ x xdist) (+ y ydist))]))
   (edges [this] (d/vertices this)))
 

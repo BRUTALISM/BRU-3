@@ -1,6 +1,7 @@
 // Compiled by ClojureScript 0.0-3196 {:static-fns true, :optimize-constants true}
 goog.provide('bru_3.geometry.distortion');
 goog.require('cljs.core');
+goog.require('bru_3.math');
 goog.require('thi.ng.geom.core');
 goog.require('thi.ng.geom.core.vector');
 /**
@@ -12,8 +13,8 @@ goog.require('thi.ng.geom.core.vector');
  * origin.
  */
 bru_3.geometry.distortion.field = (function bru_3$geometry$distortion$field(){
-var G__21484 = arguments.length;
-switch (G__21484) {
+var G__19784 = arguments.length;
+switch (G__19784) {
 case 2:
 return bru_3.geometry.distortion.field.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -29,42 +30,42 @@ throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(arguments.lengt
 });
 
 bru_3.geometry.distortion.field.cljs$core$IFn$_invoke$arity$2 = (function (xres,yres){
-return cljs.core.vec((function (){var iter__13329__auto__ = (function bru_3$geometry$distortion$iter__21485(s__21486){
+return cljs.core.vec((function (){var iter__13361__auto__ = (function bru_3$geometry$distortion$iter__19785(s__19786){
 return (new cljs.core.LazySeq(null,(function (){
-var s__21486__$1 = s__21486;
+var s__19786__$1 = s__19786;
 while(true){
-var temp__4422__auto__ = cljs.core.seq(s__21486__$1);
+var temp__4422__auto__ = cljs.core.seq(s__19786__$1);
 if(temp__4422__auto__){
-var s__21486__$2 = temp__4422__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__21486__$2)){
-var c__13327__auto__ = cljs.core.chunk_first(s__21486__$2);
-var size__13328__auto__ = cljs.core.count(c__13327__auto__);
-var b__21488 = cljs.core.chunk_buffer(size__13328__auto__);
-if((function (){var i__21487 = (0);
+var s__19786__$2 = temp__4422__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__19786__$2)){
+var c__13359__auto__ = cljs.core.chunk_first(s__19786__$2);
+var size__13360__auto__ = cljs.core.count(c__13359__auto__);
+var b__19788 = cljs.core.chunk_buffer(size__13360__auto__);
+if((function (){var i__19787 = (0);
 while(true){
-if((i__21487 < size__13328__auto__)){
-var x = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto__,i__21487);
-cljs.core.chunk_append(b__21488,cljs.core.vec((function (){var iter__13329__auto__ = ((function (i__21487,x,c__13327__auto__,size__13328__auto__,b__21488,s__21486__$2,temp__4422__auto__){
-return (function bru_3$geometry$distortion$iter__21485_$_iter__21503(s__21504){
-return (new cljs.core.LazySeq(null,((function (i__21487,x,c__13327__auto__,size__13328__auto__,b__21488,s__21486__$2,temp__4422__auto__){
+if((i__19787 < size__13360__auto__)){
+var x = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto__,i__19787);
+cljs.core.chunk_append(b__19788,cljs.core.vec((function (){var iter__13361__auto__ = ((function (i__19787,x,c__13359__auto__,size__13360__auto__,b__19788,s__19786__$2,temp__4422__auto__){
+return (function bru_3$geometry$distortion$iter__19785_$_iter__19803(s__19804){
+return (new cljs.core.LazySeq(null,((function (i__19787,x,c__13359__auto__,size__13360__auto__,b__19788,s__19786__$2,temp__4422__auto__){
 return (function (){
-var s__21504__$1 = s__21504;
+var s__19804__$1 = s__19804;
 while(true){
-var temp__4422__auto____$1 = cljs.core.seq(s__21504__$1);
+var temp__4422__auto____$1 = cljs.core.seq(s__19804__$1);
 if(temp__4422__auto____$1){
-var s__21504__$2 = temp__4422__auto____$1;
-if(cljs.core.chunked_seq_QMARK_(s__21504__$2)){
-var c__13327__auto____$1 = cljs.core.chunk_first(s__21504__$2);
-var size__13328__auto____$1 = cljs.core.count(c__13327__auto____$1);
-var b__21506 = cljs.core.chunk_buffer(size__13328__auto____$1);
-if((function (){var i__21505 = (0);
+var s__19804__$2 = temp__4422__auto____$1;
+if(cljs.core.chunked_seq_QMARK_(s__19804__$2)){
+var c__13359__auto____$1 = cljs.core.chunk_first(s__19804__$2);
+var size__13360__auto____$1 = cljs.core.count(c__13359__auto____$1);
+var b__19806 = cljs.core.chunk_buffer(size__13360__auto____$1);
+if((function (){var i__19805 = (0);
 while(true){
-if((i__21505 < size__13328__auto____$1)){
-var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto____$1,i__21505);
-cljs.core.chunk_append(b__21506,thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0());
+if((i__19805 < size__13360__auto____$1)){
+var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto____$1,i__19805);
+cljs.core.chunk_append(b__19806,thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0());
 
-var G__21578 = (i__21505 + (1));
-i__21505 = G__21578;
+var G__19862 = (i__19805 + (1));
+i__19805 = G__19862;
 continue;
 } else {
 return true;
@@ -72,28 +73,28 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21506),bru_3$geometry$distortion$iter__21485_$_iter__21503(cljs.core.chunk_rest(s__21504__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19806),bru_3$geometry$distortion$iter__19785_$_iter__19803(cljs.core.chunk_rest(s__19804__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21506),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19806),null);
 }
 } else {
-var y = cljs.core.first(s__21504__$2);
-return cljs.core.cons(thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0(),bru_3$geometry$distortion$iter__21485_$_iter__21503(cljs.core.rest(s__21504__$2)));
+var y = cljs.core.first(s__19804__$2);
+return cljs.core.cons(thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0(),bru_3$geometry$distortion$iter__19785_$_iter__19803(cljs.core.rest(s__19804__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(i__21487,x,c__13327__auto__,size__13328__auto__,b__21488,s__21486__$2,temp__4422__auto__))
+});})(i__19787,x,c__13359__auto__,size__13360__auto__,b__19788,s__19786__$2,temp__4422__auto__))
 ,null,null));
-});})(i__21487,x,c__13327__auto__,size__13328__auto__,b__21488,s__21486__$2,temp__4422__auto__))
+});})(i__19787,x,c__13359__auto__,size__13360__auto__,b__19788,s__19786__$2,temp__4422__auto__))
 ;
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
 })()));
 
-var G__21579 = (i__21487 + (1));
-i__21487 = G__21579;
+var G__19863 = (i__19787 + (1));
+i__19787 = G__19863;
 continue;
 } else {
 return true;
@@ -101,33 +102,33 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21488),bru_3$geometry$distortion$iter__21485(cljs.core.chunk_rest(s__21486__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19788),bru_3$geometry$distortion$iter__19785(cljs.core.chunk_rest(s__19786__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21488),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19788),null);
 }
 } else {
-var x = cljs.core.first(s__21486__$2);
-return cljs.core.cons(cljs.core.vec((function (){var iter__13329__auto__ = ((function (x,s__21486__$2,temp__4422__auto__){
-return (function bru_3$geometry$distortion$iter__21485_$_iter__21509(s__21510){
-return (new cljs.core.LazySeq(null,((function (x,s__21486__$2,temp__4422__auto__){
+var x = cljs.core.first(s__19786__$2);
+return cljs.core.cons(cljs.core.vec((function (){var iter__13361__auto__ = ((function (x,s__19786__$2,temp__4422__auto__){
+return (function bru_3$geometry$distortion$iter__19785_$_iter__19809(s__19810){
+return (new cljs.core.LazySeq(null,((function (x,s__19786__$2,temp__4422__auto__){
 return (function (){
-var s__21510__$1 = s__21510;
+var s__19810__$1 = s__19810;
 while(true){
-var temp__4422__auto____$1 = cljs.core.seq(s__21510__$1);
+var temp__4422__auto____$1 = cljs.core.seq(s__19810__$1);
 if(temp__4422__auto____$1){
-var s__21510__$2 = temp__4422__auto____$1;
-if(cljs.core.chunked_seq_QMARK_(s__21510__$2)){
-var c__13327__auto__ = cljs.core.chunk_first(s__21510__$2);
-var size__13328__auto__ = cljs.core.count(c__13327__auto__);
-var b__21512 = cljs.core.chunk_buffer(size__13328__auto__);
-if((function (){var i__21511 = (0);
+var s__19810__$2 = temp__4422__auto____$1;
+if(cljs.core.chunked_seq_QMARK_(s__19810__$2)){
+var c__13359__auto__ = cljs.core.chunk_first(s__19810__$2);
+var size__13360__auto__ = cljs.core.count(c__13359__auto__);
+var b__19812 = cljs.core.chunk_buffer(size__13360__auto__);
+if((function (){var i__19811 = (0);
 while(true){
-if((i__21511 < size__13328__auto__)){
-var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto__,i__21511);
-cljs.core.chunk_append(b__21512,thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0());
+if((i__19811 < size__13360__auto__)){
+var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto__,i__19811);
+cljs.core.chunk_append(b__19812,thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0());
 
-var G__21580 = (i__21511 + (1));
-i__21511 = G__21580;
+var G__19864 = (i__19811 + (1));
+i__19811 = G__19864;
 continue;
 } else {
 return true;
@@ -135,25 +136,25 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21512),bru_3$geometry$distortion$iter__21485_$_iter__21509(cljs.core.chunk_rest(s__21510__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19812),bru_3$geometry$distortion$iter__19785_$_iter__19809(cljs.core.chunk_rest(s__19810__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21512),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19812),null);
 }
 } else {
-var y = cljs.core.first(s__21510__$2);
-return cljs.core.cons(thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0(),bru_3$geometry$distortion$iter__21485_$_iter__21509(cljs.core.rest(s__21510__$2)));
+var y = cljs.core.first(s__19810__$2);
+return cljs.core.cons(thi.ng.geom.core.vector.randvec2.cljs$core$IFn$_invoke$arity$0(),bru_3$geometry$distortion$iter__19785_$_iter__19809(cljs.core.rest(s__19810__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(x,s__21486__$2,temp__4422__auto__))
+});})(x,s__19786__$2,temp__4422__auto__))
 ,null,null));
-});})(x,s__21486__$2,temp__4422__auto__))
+});})(x,s__19786__$2,temp__4422__auto__))
 ;
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
-})()),bru_3$geometry$distortion$iter__21485(cljs.core.rest(s__21486__$2)));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
+})()),bru_3$geometry$distortion$iter__19785(cljs.core.rest(s__19786__$2)));
 }
 } else {
 return null;
@@ -162,66 +163,64 @@ break;
 }
 }),null,null));
 });
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(xres));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(xres));
 })());
 });
 
 bru_3.geometry.distortion.field.cljs$core$IFn$_invoke$arity$5 = (function (xres,yres,fls,xscale,yscale){
 var closest_line = (function (v){
-return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.min_key,(function (p1__21482_SHARP_){
-return thi.ng.geom.core.dist(v,cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.mix,cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(p1__21482_SHARP_)));
+return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.min_key,(function (p1__19782_SHARP_){
+return thi.ng.geom.core.dist(v,cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core.mix,cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(p1__19782_SHARP_)));
 }),fls);
 });
-return cljs.core.vec((function (){var iter__13329__auto__ = ((function (closest_line){
-return (function bru_3$geometry$distortion$iter__21515(s__21516){
+return cljs.core.vec((function (){var iter__13361__auto__ = ((function (closest_line){
+return (function bru_3$geometry$distortion$iter__19815(s__19816){
 return (new cljs.core.LazySeq(null,((function (closest_line){
 return (function (){
-var s__21516__$1 = s__21516;
+var s__19816__$1 = s__19816;
 while(true){
-var temp__4422__auto__ = cljs.core.seq(s__21516__$1);
+var temp__4422__auto__ = cljs.core.seq(s__19816__$1);
 if(temp__4422__auto__){
-var s__21516__$2 = temp__4422__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__21516__$2)){
-var c__13327__auto__ = cljs.core.chunk_first(s__21516__$2);
-var size__13328__auto__ = cljs.core.count(c__13327__auto__);
-var b__21518 = cljs.core.chunk_buffer(size__13328__auto__);
-if((function (){var i__21517 = (0);
+var s__19816__$2 = temp__4422__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__19816__$2)){
+var c__13359__auto__ = cljs.core.chunk_first(s__19816__$2);
+var size__13360__auto__ = cljs.core.count(c__13359__auto__);
+var b__19818 = cljs.core.chunk_buffer(size__13360__auto__);
+if((function (){var i__19817 = (0);
 while(true){
-if((i__21517 < size__13328__auto__)){
-var x = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto__,i__21517);
-cljs.core.chunk_append(b__21518,cljs.core.vec((function (){var iter__13329__auto__ = ((function (i__21517,x,c__13327__auto__,size__13328__auto__,b__21518,s__21516__$2,temp__4422__auto__,closest_line){
-return (function bru_3$geometry$distortion$iter__21515_$_iter__21549(s__21550){
-return (new cljs.core.LazySeq(null,((function (i__21517,x,c__13327__auto__,size__13328__auto__,b__21518,s__21516__$2,temp__4422__auto__,closest_line){
+if((i__19817 < size__13360__auto__)){
+var x = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto__,i__19817);
+cljs.core.chunk_append(b__19818,cljs.core.vec((function (){var iter__13361__auto__ = ((function (i__19817,x,c__13359__auto__,size__13360__auto__,b__19818,s__19816__$2,temp__4422__auto__,closest_line){
+return (function bru_3$geometry$distortion$iter__19815_$_iter__19841(s__19842){
+return (new cljs.core.LazySeq(null,((function (i__19817,x,c__13359__auto__,size__13360__auto__,b__19818,s__19816__$2,temp__4422__auto__,closest_line){
 return (function (){
-var s__21550__$1 = s__21550;
+var s__19842__$1 = s__19842;
 while(true){
-var temp__4422__auto____$1 = cljs.core.seq(s__21550__$1);
+var temp__4422__auto____$1 = cljs.core.seq(s__19842__$1);
 if(temp__4422__auto____$1){
-var s__21550__$2 = temp__4422__auto____$1;
-if(cljs.core.chunked_seq_QMARK_(s__21550__$2)){
-var c__13327__auto____$1 = cljs.core.chunk_first(s__21550__$2);
-var size__13328__auto____$1 = cljs.core.count(c__13327__auto____$1);
-var b__21552 = cljs.core.chunk_buffer(size__13328__auto____$1);
-if((function (){var i__21551 = (0);
+var s__19842__$2 = temp__4422__auto____$1;
+if(cljs.core.chunked_seq_QMARK_(s__19842__$2)){
+var c__13359__auto____$1 = cljs.core.chunk_first(s__19842__$2);
+var size__13360__auto____$1 = cljs.core.count(c__13359__auto____$1);
+var b__19844 = cljs.core.chunk_buffer(size__13360__auto____$1);
+if((function (){var i__19843 = (0);
 while(true){
-if((i__21551 < size__13328__auto____$1)){
-var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto____$1,i__21551);
-cljs.core.chunk_append(b__21552,(function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
+if((i__19843 < size__13360__auto____$1)){
+var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto____$1,i__19843);
+cljs.core.chunk_append(b__19844,(function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
 var clp = cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(closest_line(v));
 var clv = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core._,cljs.core.reverse(clp)));
-var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__21559 = (0);
-return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__21559) : clp.call(null,G__21559));
+var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__19849 = (0);
+return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__19849) : clp.call(null,G__19849));
 })());
-var s = (function (){var G__21560 = thi.ng.geom.core.cross(tv,clv);
-return (Math.signum.cljs$core$IFn$_invoke$arity$1 ? Math.signum.cljs$core$IFn$_invoke$arity$1(G__21560) : Math.signum.call(null,G__21560));
-})();
-var amax = ((1) * Math.PI);
-var a = (s * (((Math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
+var s = bru_3.math.signum(thi.ng.geom.core.cross(tv,clv));
+var amax = ((1) * bru_3.math.PI);
+var a = (s * (((bru_3.math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
 return thi.ng.geom.core.rotate(clv,a);
 })());
 
-var G__21581 = (i__21551 + (1));
-i__21551 = G__21581;
+var G__19865 = (i__19843 + (1));
+i__19843 = G__19865;
 continue;
 } else {
 return true;
@@ -229,40 +228,38 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21552),bru_3$geometry$distortion$iter__21515_$_iter__21549(cljs.core.chunk_rest(s__21550__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19844),bru_3$geometry$distortion$iter__19815_$_iter__19841(cljs.core.chunk_rest(s__19842__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21552),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19844),null);
 }
 } else {
-var y = cljs.core.first(s__21550__$2);
+var y = cljs.core.first(s__19842__$2);
 return cljs.core.cons((function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
 var clp = cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(closest_line(v));
 var clv = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core._,cljs.core.reverse(clp)));
-var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__21561 = (0);
-return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__21561) : clp.call(null,G__21561));
+var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__19850 = (0);
+return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__19850) : clp.call(null,G__19850));
 })());
-var s = (function (){var G__21562 = thi.ng.geom.core.cross(tv,clv);
-return (Math.signum.cljs$core$IFn$_invoke$arity$1 ? Math.signum.cljs$core$IFn$_invoke$arity$1(G__21562) : Math.signum.call(null,G__21562));
-})();
-var amax = ((1) * Math.PI);
-var a = (s * (((Math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
+var s = bru_3.math.signum(thi.ng.geom.core.cross(tv,clv));
+var amax = ((1) * bru_3.math.PI);
+var a = (s * (((bru_3.math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
 return thi.ng.geom.core.rotate(clv,a);
-})(),bru_3$geometry$distortion$iter__21515_$_iter__21549(cljs.core.rest(s__21550__$2)));
+})(),bru_3$geometry$distortion$iter__19815_$_iter__19841(cljs.core.rest(s__19842__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(i__21517,x,c__13327__auto__,size__13328__auto__,b__21518,s__21516__$2,temp__4422__auto__,closest_line))
+});})(i__19817,x,c__13359__auto__,size__13360__auto__,b__19818,s__19816__$2,temp__4422__auto__,closest_line))
 ,null,null));
-});})(i__21517,x,c__13327__auto__,size__13328__auto__,b__21518,s__21516__$2,temp__4422__auto__,closest_line))
+});})(i__19817,x,c__13359__auto__,size__13360__auto__,b__19818,s__19816__$2,temp__4422__auto__,closest_line))
 ;
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
 })()));
 
-var G__21582 = (i__21517 + (1));
-i__21517 = G__21582;
+var G__19866 = (i__19817 + (1));
+i__19817 = G__19866;
 continue;
 } else {
 return true;
@@ -270,45 +267,43 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21518),bru_3$geometry$distortion$iter__21515(cljs.core.chunk_rest(s__21516__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19818),bru_3$geometry$distortion$iter__19815(cljs.core.chunk_rest(s__19816__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21518),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19818),null);
 }
 } else {
-var x = cljs.core.first(s__21516__$2);
-return cljs.core.cons(cljs.core.vec((function (){var iter__13329__auto__ = ((function (x,s__21516__$2,temp__4422__auto__,closest_line){
-return (function bru_3$geometry$distortion$iter__21515_$_iter__21563(s__21564){
-return (new cljs.core.LazySeq(null,((function (x,s__21516__$2,temp__4422__auto__,closest_line){
+var x = cljs.core.first(s__19816__$2);
+return cljs.core.cons(cljs.core.vec((function (){var iter__13361__auto__ = ((function (x,s__19816__$2,temp__4422__auto__,closest_line){
+return (function bru_3$geometry$distortion$iter__19815_$_iter__19851(s__19852){
+return (new cljs.core.LazySeq(null,((function (x,s__19816__$2,temp__4422__auto__,closest_line){
 return (function (){
-var s__21564__$1 = s__21564;
+var s__19852__$1 = s__19852;
 while(true){
-var temp__4422__auto____$1 = cljs.core.seq(s__21564__$1);
+var temp__4422__auto____$1 = cljs.core.seq(s__19852__$1);
 if(temp__4422__auto____$1){
-var s__21564__$2 = temp__4422__auto____$1;
-if(cljs.core.chunked_seq_QMARK_(s__21564__$2)){
-var c__13327__auto__ = cljs.core.chunk_first(s__21564__$2);
-var size__13328__auto__ = cljs.core.count(c__13327__auto__);
-var b__21566 = cljs.core.chunk_buffer(size__13328__auto__);
-if((function (){var i__21565 = (0);
+var s__19852__$2 = temp__4422__auto____$1;
+if(cljs.core.chunked_seq_QMARK_(s__19852__$2)){
+var c__13359__auto__ = cljs.core.chunk_first(s__19852__$2);
+var size__13360__auto__ = cljs.core.count(c__13359__auto__);
+var b__19854 = cljs.core.chunk_buffer(size__13360__auto__);
+if((function (){var i__19853 = (0);
 while(true){
-if((i__21565 < size__13328__auto__)){
-var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13327__auto__,i__21565);
-cljs.core.chunk_append(b__21566,(function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
+if((i__19853 < size__13360__auto__)){
+var y = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__13359__auto__,i__19853);
+cljs.core.chunk_append(b__19854,(function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
 var clp = cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(closest_line(v));
 var clv = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core._,cljs.core.reverse(clp)));
-var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__21573 = (0);
-return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__21573) : clp.call(null,G__21573));
+var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__19859 = (0);
+return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__19859) : clp.call(null,G__19859));
 })());
-var s = (function (){var G__21574 = thi.ng.geom.core.cross(tv,clv);
-return (Math.signum.cljs$core$IFn$_invoke$arity$1 ? Math.signum.cljs$core$IFn$_invoke$arity$1(G__21574) : Math.signum.call(null,G__21574));
-})();
-var amax = ((1) * Math.PI);
-var a = (s * (((Math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
+var s = bru_3.math.signum(thi.ng.geom.core.cross(tv,clv));
+var amax = ((1) * bru_3.math.PI);
+var a = (s * (((bru_3.math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
 return thi.ng.geom.core.rotate(clv,a);
 })());
 
-var G__21583 = (i__21565 + (1));
-i__21565 = G__21583;
+var G__19867 = (i__19853 + (1));
+i__19853 = G__19867;
 continue;
 } else {
 return true;
@@ -316,37 +311,35 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__21566),bru_3$geometry$distortion$iter__21515_$_iter__21563(cljs.core.chunk_rest(s__21564__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__19854),bru_3$geometry$distortion$iter__19815_$_iter__19851(cljs.core.chunk_rest(s__19852__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__21566),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__19854),null);
 }
 } else {
-var y = cljs.core.first(s__21564__$2);
+var y = cljs.core.first(s__19852__$2);
 return cljs.core.cons((function (){var v = thi.ng.geom.core.vector.vec2.cljs$core$IFn$_invoke$arity$2((x * xscale),(y * yscale));
 var clp = cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(closest_line(v));
 var clv = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core._,cljs.core.reverse(clp)));
-var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__21575 = (0);
-return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__21575) : clp.call(null,G__21575));
+var tv = thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(v,(function (){var G__19860 = (0);
+return (clp.cljs$core$IFn$_invoke$arity$1 ? clp.cljs$core$IFn$_invoke$arity$1(G__19860) : clp.call(null,G__19860));
 })());
-var s = (function (){var G__21576 = thi.ng.geom.core.cross(tv,clv);
-return (Math.signum.cljs$core$IFn$_invoke$arity$1 ? Math.signum.cljs$core$IFn$_invoke$arity$1(G__21576) : Math.signum.call(null,G__21576));
-})();
-var amax = ((1) * Math.PI);
-var a = (s * (((Math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
+var s = bru_3.math.signum(thi.ng.geom.core.cross(tv,clv));
+var amax = ((1) * bru_3.math.PI);
+var a = (s * (((bru_3.math.PI - amax) / (2)) + (cljs.core.rand.cljs$core$IFn$_invoke$arity$0() * amax)));
 return thi.ng.geom.core.rotate(clv,a);
-})(),bru_3$geometry$distortion$iter__21515_$_iter__21563(cljs.core.rest(s__21564__$2)));
+})(),bru_3$geometry$distortion$iter__19815_$_iter__19851(cljs.core.rest(s__19852__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(x,s__21516__$2,temp__4422__auto__,closest_line))
+});})(x,s__19816__$2,temp__4422__auto__,closest_line))
 ,null,null));
-});})(x,s__21516__$2,temp__4422__auto__,closest_line))
+});})(x,s__19816__$2,temp__4422__auto__,closest_line))
 ;
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
-})()),bru_3$geometry$distortion$iter__21515(cljs.core.rest(s__21516__$2)));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(yres));
+})()),bru_3$geometry$distortion$iter__19815(cljs.core.rest(s__19816__$2)));
 }
 } else {
 return null;
@@ -357,7 +350,7 @@ break;
 ,null,null));
 });})(closest_line))
 ;
-return iter__13329__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(xres));
+return iter__13361__auto__(cljs.core.range.cljs$core$IFn$_invoke$arity$1(xres));
 })());
 });
 
@@ -373,19 +366,11 @@ var xcount = cljs.core.count(vf);
 var ycount = cljs.core.count(cljs.core.first(vf));
 var xtr = ((xcount - (1)) * (x / xmax));
 var ytr = ((ycount - (1)) * (y / ymax));
-var lx = ((function (){var G__21588 = xtr;
-return (Math.floor.cljs$core$IFn$_invoke$arity$1 ? Math.floor.cljs$core$IFn$_invoke$arity$1(G__21588) : Math.floor.call(null,G__21588));
-})() | (0));
-var ux = ((function (){var G__21589 = xtr;
-return (Math.ceil.cljs$core$IFn$_invoke$arity$1 ? Math.ceil.cljs$core$IFn$_invoke$arity$1(G__21589) : Math.ceil.call(null,G__21589));
-})() | (0));
+var lx = (bru_3.math.floor(xtr) | (0));
+var ux = (bru_3.math.ceil(xtr) | (0));
 var tx = (xtr - lx);
-var ly = ((function (){var G__21590 = ytr;
-return (Math.floor.cljs$core$IFn$_invoke$arity$1 ? Math.floor.cljs$core$IFn$_invoke$arity$1(G__21590) : Math.floor.call(null,G__21590));
-})() | (0));
-var uy = ((function (){var G__21591 = ytr;
-return (Math.ceil.cljs$core$IFn$_invoke$arity$1 ? Math.ceil.cljs$core$IFn$_invoke$arity$1(G__21591) : Math.ceil.call(null,G__21591));
-})() | (0));
+var ly = (bru_3.math.floor(ytr) | (0));
+var uy = (bru_3.math.ceil(ytr) | (0));
 var ty = (ytr - ly);
 return thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$2(thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$3(thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(vf,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ux,uy], null)),(tx * ty)),thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(vf,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [ux,ly], null)),(tx * ((1) - ty))),thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(vf,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lx,uy], null)),(((1) - tx) * ty))),thi.ng.geom.core._STAR_.cljs$core$IFn$_invoke$arity$2(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(vf,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [lx,ly], null)),(((1) - tx) * ((1) - ty)))));
 });

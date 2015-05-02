@@ -31,11 +31,11 @@ throw (new Error([cljs.core.str("Expecting a keyword, got: "),cljs.core.str(key)
  * (length-of-longest-key {}) ;=> 0
  */
 quil.util.length_of_longest_key = (function quil$util$length_of_longest_key(m){
-var or__4224__auto__ = cljs.core.last(cljs.core.sort.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__10851_SHARP_){
-return p1__10851_SHARP_.length();
+var or__12607__auto__ = cljs.core.last(cljs.core.sort.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__25073_SHARP_){
+return p1__25073_SHARP_.length();
 }),cljs.core.keys(m))));
-if(cljs.core.truth_(or__4224__auto__)){
-return or__4224__auto__;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return (0);
 }
@@ -47,8 +47,8 @@ return (0);
  * empty string and also without pad in which case it defaults to a single space
  */
 quil.util.gen_padding = (function quil$util$gen_padding(){
-var G__10853 = arguments.length;
-switch (G__10853) {
+var G__25075 = arguments.length;
+switch (G__25075) {
 case 1:
 return quil.util.gen_padding.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -87,10 +87,10 @@ quil.util.gen_padding.cljs$lang$maxFixedArity = 3;
 quil.util.print_definition_list = (function quil$util$print_definition_list(definitions){
 var longest_key = quil.util.length_of_longest_key(definitions);
 return cljs.core.dorun.cljs$core$IFn$_invoke$arity$1(cljs.core.map.cljs$core$IFn$_invoke$arity$2(((function (longest_key){
-return (function (p__10857){
-var vec__10858 = p__10857;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__10858,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__10858,(1),null);
+return (function (p__25079){
+var vec__25080 = p__25079;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25080,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__25080,(1),null);
 var len = k.length();
 var diff = (longest_key - len);
 var pad = quil.util.gen_padding.cljs$core$IFn$_invoke$arity$1(diff);

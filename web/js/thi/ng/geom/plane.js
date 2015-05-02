@@ -19,8 +19,8 @@ var n__$1 = thi.ng.geom.core.normalize.cljs$core$IFn$_invoke$arity$1(thi.ng.geom
 return (new thi.ng.geom.types.Plane(n__$1,(- thi.ng.geom.core.dot(n__$1,p))));
 });
 thi.ng.geom.plane.plane_from_points = (function thi$ng$geom$plane$plane_from_points(){
-var G__26409 = arguments.length;
-switch (G__26409) {
+var G__32252 = arguments.length;
+switch (G__32252) {
 case 1:
 return thi.ng.geom.plane.plane_from_points.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -35,11 +35,11 @@ throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(arguments.lengt
 }
 });
 
-thi.ng.geom.plane.plane_from_points.cljs$core$IFn$_invoke$arity$1 = (function (p__26410){
-var vec__26411 = p__26410;
-var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26411,(0),null);
-var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26411,(1),null);
-var c = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26411,(2),null);
+thi.ng.geom.plane.plane_from_points.cljs$core$IFn$_invoke$arity$1 = (function (p__32253){
+var vec__32254 = p__32253;
+var a = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32254,(0),null);
+var b = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32254,(1),null);
+var c = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32254,(2),null);
 return thi.ng.geom.plane.plane_from_points.cljs$core$IFn$_invoke$arity$3(a,b,c);
 });
 
@@ -98,9 +98,9 @@ thi.ng.geom.types.Plane.prototype.thi$ng$geom$core$PIntersect$ = true;
 
 thi.ng.geom.types.Plane.prototype.thi$ng$geom$core$PIntersect$intersect_line$arity$2 = (function (_,l){
 var ___$1 = this;
-var vec__26414 = ((cljs.core.map_QMARK_(l))?cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(l):l);
-var p = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26414,(0),null);
-var q = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26414,(1),null);
+var vec__32257 = ((cljs.core.map_QMARK_(l))?cljs.core.constant$keyword$points.cljs$core$IFn$_invoke$arity$1(l):l);
+var p = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32257,(0),null);
+var q = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32257,(1),null);
 return thi.ng.geom.core.intersect.intersect_ray_plane_QMARK_(p,thi.ng.geom.core._.cljs$core$IFn$_invoke$arity$2(q,p),cljs.core.constant$keyword$n.cljs$core$IFn$_invoke$arity$1(___$1),cljs.core.constant$keyword$w.cljs$core$IFn$_invoke$arity$1(___$1));
 });
 
@@ -111,9 +111,9 @@ return thi.ng.geom.core.intersect.intersect_ray_plane_QMARK_(p,thi.ng.geom.core.
 
 thi.ng.geom.types.Plane.prototype.thi$ng$geom$core$PIntersect$intersect_ray$arity$2 = (function (_,ray){
 var ___$1 = this;
-var vec__26415 = ((cljs.core.map_QMARK_(ray))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$p.cljs$core$IFn$_invoke$arity$1(ray),cljs.core.constant$keyword$dir.cljs$core$IFn$_invoke$arity$1(ray)], null):ray);
-var p = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26415,(0),null);
-var dir = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26415,(1),null);
+var vec__32258 = ((cljs.core.map_QMARK_(ray))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.constant$keyword$p.cljs$core$IFn$_invoke$arity$1(ray),cljs.core.constant$keyword$dir.cljs$core$IFn$_invoke$arity$1(ray)], null):ray);
+var p = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32258,(0),null);
+var dir = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32258,(1),null);
 return thi.ng.geom.core.intersect.intersect_ray_plane_QMARK_(p,dir,cljs.core.constant$keyword$n.cljs$core$IFn$_invoke$arity$1(___$1),cljs.core.constant$keyword$w.cljs$core$IFn$_invoke$arity$1(___$1));
 });
 
@@ -227,46 +227,46 @@ var ___$1 = this;
 return thi.ng.geom.core.as_mesh.cljs$core$IFn$_invoke$arity$2(___$1,cljs.core.PersistentArrayMap.EMPTY);
 });
 
-thi.ng.geom.types.Plane.prototype.thi$ng$geom$core$PMeshConvert$as_mesh$arity$2 = (function (_,p__26416){
-var map__26417 = p__26416;
-var map__26417__$1 = ((cljs.core.seq_QMARK_(map__26417))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__26417):map__26417);
-var p = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26417__$1,cljs.core.constant$keyword$p);
-var width = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26417__$1,cljs.core.constant$keyword$width);
-var height = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26417__$1,cljs.core.constant$keyword$height);
-var size = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__26417__$1,cljs.core.constant$keyword$size,1.0);
-var mesh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26417__$1,cljs.core.constant$keyword$mesh);
+thi.ng.geom.types.Plane.prototype.thi$ng$geom$core$PMeshConvert$as_mesh$arity$2 = (function (_,p__32259){
+var map__32260 = p__32259;
+var map__32260__$1 = ((cljs.core.seq_QMARK_(map__32260))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__32260):map__32260);
+var p = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32260__$1,cljs.core.constant$keyword$p);
+var width = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32260__$1,cljs.core.constant$keyword$width);
+var height = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32260__$1,cljs.core.constant$keyword$height);
+var size = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__32260__$1,cljs.core.constant$keyword$size,1.0);
+var mesh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32260__$1,cljs.core.constant$keyword$mesh);
 var ___$1 = this;
-var w = ((function (){var or__12575__auto__ = width;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var w = ((function (){var or__12607__auto__ = width;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return size;
 }
 })() * 0.5);
-var h = ((function (){var or__12575__auto__ = height;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var h = ((function (){var or__12607__auto__ = height;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return size;
 }
 })() * 0.5);
 var flip_QMARK_ = thi.ng.common.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$2(-1.0,thi.ng.geom.core.dot(cljs.core.constant$keyword$n.cljs$core$IFn$_invoke$arity$1(___$1),thi.ng.geom.core.vector.V3Z));
-var p__$1 = thi.ng.geom.core.closest_point(___$1,(function (){var or__12575__auto__ = p;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+var p__$1 = thi.ng.geom.core.closest_point(___$1,(function (){var or__12607__auto__ = p;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$0();
 }
 })());
 var q = (cljs.core.truth_(flip_QMARK_)?thi.ng.geom.core.quaternion.quat.cljs$core$IFn$_invoke$arity$4((0),(0),(0),(1)):thi.ng.geom.core.quaternion.alignment_quat(thi.ng.geom.core.vector.V3Z,cljs.core.constant$keyword$n.cljs$core$IFn$_invoke$arity$1(___$1)));
-var face = cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(((function (w,h,flip_QMARK_,p__$1,q,___$1,map__26417,map__26417__$1,p,width,height,size,mesh){
-return (function (p1__26413_SHARP_){
-return thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$2(p__$1,thi.ng.geom.core.transform_vector(q,p1__26413_SHARP_));
-});})(w,h,flip_QMARK_,p__$1,q,___$1,map__26417,map__26417__$1,p,width,height,size,mesh))
+var face = cljs.core.mapv.cljs$core$IFn$_invoke$arity$2(((function (w,h,flip_QMARK_,p__$1,q,___$1,map__32260,map__32260__$1,p,width,height,size,mesh){
+return (function (p1__32256_SHARP_){
+return thi.ng.geom.core._PLUS_.cljs$core$IFn$_invoke$arity$2(p__$1,thi.ng.geom.core.transform_vector(q,p1__32256_SHARP_));
+});})(w,h,flip_QMARK_,p__$1,q,___$1,map__32260,map__32260__$1,p,width,height,size,mesh))
 ,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$3((- w),(- h),(0)),thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$3((- w),h,(0)),thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$3(w,h,(0)),thi.ng.geom.core.vector.vec3.cljs$core$IFn$_invoke$arity$3(w,(- h),(0))], null));
-return thi.ng.geom.core.into((function (){var or__12575__auto__ = mesh;
-if(cljs.core.truth_(or__12575__auto__)){
-return or__12575__auto__;
+return thi.ng.geom.core.into((function (){var or__12607__auto__ = mesh;
+if(cljs.core.truth_(or__12607__auto__)){
+return or__12607__auto__;
 } else {
 return thi.ng.geom.basicmesh.basic_mesh();
 }
