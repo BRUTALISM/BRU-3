@@ -27,6 +27,7 @@ cljs.core.constant$keyword$rx = new cljs.core.Keyword(null,"rx","rx",1627208482)
 cljs.core.constant$keyword$zzy = new cljs.core.Keyword(null,"zzy","zzy",-874287326);
 cljs.core.constant$keyword$r = new cljs.core.Keyword(null,"r","r",-471384190);
 cljs.core.constant$keyword$two_DASH_phase_DASH_shapes = new cljs.core.Keyword(null,"two-phase-shapes","two-phase-shapes",2072100770);
+cljs.core.constant$keyword$bottom_DASH_margin = new cljs.core.Keyword(null,"bottom-margin","bottom-margin",-701300733);
 cljs.core.constant$keyword$vertices = new cljs.core.Keyword(null,"vertices","vertices",2008905731);
 cljs.core.constant$keyword$burn = new cljs.core.Keyword(null,"burn","burn",-458179293);
 cljs.core.constant$keyword$indent = new cljs.core.Keyword(null,"indent","indent",-148200125);

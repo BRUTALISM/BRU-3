@@ -43,8 +43,9 @@
                    :draw-wings true
                    :draw-fault false
                    :draw-distortion false
-                   :outline-only true
-                   :two-phase-shapes false}))
+                   :outline-only false
+                   :two-phase-shapes false
+                   :bottom-margin 20}))
 
 (defn flip [k]
   (let [v (not (k @config))]
@@ -85,7 +86,6 @@
         xscale (/ (q/width) (dec xres))
         yscale (/ (q/height) (dec yres))]
     (distortion/field xres yres fl xscale yscale)))
-    ;;(distortion/field xres yres)))
 
 (defn new-fault-line []
   (fault/fault-line (r/rect 0 0 (q/width) (q/height)) (:fault-config @config)))
@@ -105,6 +105,22 @@
 ;;
 ;; Drawing
 ;;
+
+(defn outliers
+  "Returns the dictionary containing the leftmost, rightmost, topmost and
+  bottommost vectors under :left, :right, :top and :bottom keys, respectively."
+  [vs mid]
+  (let [outs {:left mid :right mid :top mid :bottom mid}
+        cmpfn (fn [coord nexxt cmp curr]
+                (if (cmp (coord nexxt) (coord curr)) nexxt curr))
+        outfn (fn [e v]
+                (-> e
+                    (update-in [:left] #(cmpfn :x v < %))
+                    (update-in [:right] #(cmpfn :x v > %))
+                    (update-in [:top] #(cmpfn :y v < %))
+                    (update-in [:bottom] #(cmpfn :y v > %))
+                    ))]
+    (reduce outfn outs vs)))
 
 (defn draw-bone [b]
   (let [[[x1 y1] [x2 y2]] (d/vertices b)
@@ -154,13 +170,6 @@
                                     intensity)
                                (v/vec2 x y))]]
       (draw-vector x y x1 y1))
-;;     (q/fill 255 32 32)
-;;     (q/stroke 255 32 32)
-;;     (doseq [i (range (count df))
-;;             j (range (count (first df)))
-;;             :let [xstep (/ (q/width) (count df))
-;;                   ystep (/ (q/height) (count (first df)))]]
-;;       (q/ellipse (* i xstep) (* j ystep) 8 8))
     (q/pop-style)))
 
 ;;
@@ -176,16 +185,17 @@
 
 (defn draw [state]
   (let [bones (:bones state)
-        [fx _] (:position (first bones))
-        [lx _] (:position (last bones))
-        sw (q/width)
-        lw (- lx fx)
-        xoff (- (/ (- sw lw) 2) fx)]
+        wings (:wings state)
+        flat-wings (reduce into [] wings)
+        mid (v/vec2 (/ (q/width) 2) (/ (q/height) 2))
+        outs (outliers flat-wings mid)
+        xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
+        yoff (- (- (q/height) (:bottom-margin @config)) (:y (:bottom outs)))]
     (q/background 14)
     (q/fill 255)
     (q/stroke 205)
     (q/push-matrix)
-    ;(q/translate xoff 0)
+    (q/translate xoff yoff)
     (when (:draw-bones @config)
       (doseq [bone bones] (draw-bone bone)))
     (when (:draw-frames @config)
@@ -196,10 +206,10 @@
         (do
           (q/push-style)
           (q/no-stroke)
-          (doseq [verts (:wings state)] (draw-verts verts))
+          (doseq [verts wings] (draw-verts verts))
           (q/pop-style)
           (q/no-fill)
-          (doseq [verts (:wings state)] (draw-verts verts)))
+          (doseq [verts wings] (draw-verts verts)))
         (doseq [verts (:wings state)] (draw-verts verts))))
     (when (:draw-distortion @config)
       (draw-distortion (:distortion state)))
@@ -219,3 +229,6 @@
     :p (do (flip :two-phase-shapes) state)
     ;; TODO: Render to file.
     state))
+
+(defn mouse-pressed [state button-info]
+  (new-state))

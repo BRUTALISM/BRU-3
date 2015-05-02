@@ -11,6 +11,7 @@
   :update d/update
   :draw d/draw
   :key-pressed d/key-pressed
+  :mouse-pressed d/mouse-pressed
   :middleware [m/fun-mode])
 
 (defn -main [] nil)
