@@ -40,11 +40,7 @@ h1 {
 .subtitle {
   font-size: 12pt;
   margin: 0px;
-}
-
-#intro {
-  margin-top: 50pt;
-  padding: 10pt;
+  margin-bottom: 50pt;
 }
 
 a:link, a:visited, a:active {
