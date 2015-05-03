@@ -2,13 +2,17 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
-  font-family: 'Inconsolata', 'Source Code Pro', Menlo, monospace;
-  font-size: 14pt;
+  font-family: 'Fira Mono', 'Courier New', 'Menlo', 'Source Code Pro', monospace;
+  font-size: 11pt;
+  font-weight: normal;
   background-color: #0e0e0e;
   color: #fff;
 }
 
 canvas {
+  cursor: pointer;
+  cursor: hand;
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -25,4 +29,36 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 24pt;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 12pt;
+  margin: 0px;
+}
+
+#intro {
+  margin-top: 50pt;
+  padding: 10pt;
+}
+
+a:link, a:visited, a:active {
+    color: #bbb;
+}
+
+a:hover {
+    color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 1200px;
+  text-align: center;
+  margin-bottom: 10pt;
 }
