@@ -5,8 +5,8 @@ body {
   font-family: 'Fira Mono', 'Courier New', 'Menlo', 'Source Code Pro', monospace;
   font-size: 11pt;
   font-weight: normal;
-  background-color: #0e0e0e;
-  color: #fff;
+  background-color: #e1e1e1;
+  color: #000;
 }
 
 canvas {
@@ -44,11 +44,11 @@ h1 {
 }
 
 a:link, a:visited, a:active {
-    color: #bbb;
+    color: #000;
 }
 
 a:hover {
-    color: #fff;
+    color: #333;
 }
 
 footer {

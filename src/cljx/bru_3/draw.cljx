@@ -191,9 +191,9 @@
         outs (outliers flat-wings mid)
         xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
         yoff (- (- (q/height) (:bottom-margin @config)) (:y (:bottom outs)))]
-    (q/background 14)
-    (q/fill 255)
-    (q/stroke 205)
+    (q/background 225)
+    (q/fill 0)
+    (q/stroke 170)
     (q/push-matrix)
     (q/translate xoff yoff)
     (when (:draw-bones @config)

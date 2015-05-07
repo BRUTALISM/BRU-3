@@ -11772,9 +11772,9 @@ function sp(a) {
 }
 function tp(a) {
   var b = Kh.b(a), c = qj.b(a), d = ld(Re, Nc, c), e = Un.a(Y.width / 2, Y.height / 2), f = mp(d, e), h = Y.width / 2 - (cl.b(Nk.b(f)) + cl.b(cm.b(f))) / 2, k = Y.height - yh.b(G.b ? G.b(Z) : G.call(null, Z)) - hh.b(ti.b(f));
-  Fo().background(14);
-  Fo().fill(255);
-  Fo().stroke(205);
+  Fo().background(225);
+  Fo().fill(0);
+  Fo().stroke(170);
   Fo().pushMatrix();
   Jo.a(h, k);
   if (p(Oi.b(G.b ? G.b(Z) : G.call(null, Z)))) {

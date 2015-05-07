@@ -637,11 +637,11 @@ var xoff = ((quil.core.width() / (2)) - ((cljs.core.constant$keyword$x.cljs$core
 var yoff = ((quil.core.height() - cljs.core.constant$keyword$bottom_DASH_margin.cljs$core$IFn$_invoke$arity$1((function (){var G__22433 = bru_3.draw.config;
 return (cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(G__22433) : cljs.core.deref.call(null,G__22433));
 })())) - cljs.core.constant$keyword$y.cljs$core$IFn$_invoke$arity$1(cljs.core.constant$keyword$bottom.cljs$core$IFn$_invoke$arity$1(outs)));
-quil.core.background.cljs$core$IFn$_invoke$arity$1((14));
+quil.core.background.cljs$core$IFn$_invoke$arity$1((225));
 
-quil.core.fill.cljs$core$IFn$_invoke$arity$1((255));
+quil.core.fill.cljs$core$IFn$_invoke$arity$1((0));
 
-quil.core.stroke.cljs$core$IFn$_invoke$arity$1((205));
+quil.core.stroke.cljs$core$IFn$_invoke$arity$1((170));
 
 quil.core.push_matrix();
 
