@@ -24,9 +24,10 @@
 
 (def wingtip-variants
   [[:spike :round :round :inverted-spike]            ;; left spikes
-   [:spike :round :spike :round]                     ;; top left, bottom right
+   ;;[:spike :round :spike :round]                   ;; top left, bottom right
    [:round :inverted-spike :spike :round]            ;; right spikes
-   [:round :inverted-spike :round :inverted-spike]]) ;; top right, bottom left
+   ;;[:round :inverted-spike :round :inverted-spike] ;; top right, bottom left
+   ])
 
 (defn edgeverts
   [{b :bite in :indent s :sharpness rev :reverse}
