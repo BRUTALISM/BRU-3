@@ -26,12 +26,12 @@
                                 :sharpness 0.1111}
 
                    :fault-config {:count 10
-                                  :y-rand-percentage 0.6
-                                  :y-length-range [20 60]
-                                  :x-spread-range [10 300]
+                                  :y-rand-percentage 0.5
+                                  :y-length-range [0 20]
+                                  :x-spread-range [10 150]
                                   :x-length-range [50 100]}
 
-                   :distortion-intensity 62
+                   :distortion-intensity 50
                    :distortion-xresolution 12
                    :distortion-yresolution 4
 
