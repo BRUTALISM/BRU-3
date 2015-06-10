@@ -23,7 +23,8 @@
   (map #(% (l letter-map)) clockwise-keys))
 
 (def wingtip-variants
-  [[:spike :round :round :inverted-spike]            ;; left spikes
+  [[:round :round :round :round]
+   [:spike :round :round :inverted-spike]            ;; left spikes
    ;;[:spike :round :spike :round]                   ;; top left, bottom right
    [:round :inverted-spike :spike :round]            ;; right spikes
    ;;[:round :inverted-spike :round :inverted-spike] ;; top right, bottom left

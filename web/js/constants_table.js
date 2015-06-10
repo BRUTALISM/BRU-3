@@ -21,6 +21,7 @@ cljs.core.constant$keyword$intersect_DASH_outside = new cljs.core.Keyword(null,"
 cljs.core.constant$keyword$enable_DASH_retina_DASH_pixels = new cljs.core.Keyword(null,"enable-retina-pixels","enable-retina-pixels",1018316034);
 cljs.core.constant$keyword$disable_DASH_depth_DASH_mask = new cljs.core.Keyword(null,"disable-depth-mask","disable-depth-mask",3298562);
 cljs.core.constant$keyword$pixels_DASH_in_DASH_360 = new cljs.core.Keyword(null,"pixels-in-360","pixels-in-360",1789567298);
+cljs.core.constant$keyword$stroke_DASH_weight = new cljs.core.Keyword(null,"stroke-weight","stroke-weight",-2128041534);
 cljs.core.constant$keyword$p_DASH_y = new cljs.core.Keyword(null,"p-y","p-y",-530704830);
 cljs.core.constant$keyword$step_DASH_size = new cljs.core.Keyword(null,"step-size","step-size",1545609922);
 cljs.core.constant$keyword$rx = new cljs.core.Keyword(null,"rx","rx",1627208482);

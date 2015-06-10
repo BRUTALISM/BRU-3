@@ -17,13 +17,13 @@
 
 (def config (atom {;; algo
                    :bone-count 10
-                   :distance-bounds [80 120]
-                   :length-bounds [50 100]
+                   :distance-bounds [100 100]
+                   :length-bounds [80 80]
                    :max-angle 20
-                   :frame-bone-randomization 0.3
-                   :wings-conf {:bite 0.0333
-                                :indent 0.3333
-                                :sharpness 0.1111}
+                   :frame-bone-randomization 0.2
+                   :wings-conf {:bite 0.05
+                                :indent 0.2
+                                :sharpness 0.07}
 
                    :fault-config {:count 10
                                   :y-rand-percentage 0.5
@@ -36,6 +36,7 @@
                    :distortion-yresolution 4
 
                    ;; presentation
+                   :stroke-weight 2
                    :dot-size 5
                    :distortion-field-step 50
                    :draw-bones false
@@ -191,9 +192,10 @@
         outs (outliers flat-wings mid)
         xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
         yoff (- (- (q/height) (:bottom-margin @config)) (:y (:bottom outs)))]
-    (q/background 225)
+    (q/background 40 140 250)
     (q/fill 0)
-    (q/stroke 170)
+    (q/stroke 255)
+    (q/stroke-weight (:stroke-weight @config))
     (q/push-matrix)
     (q/translate xoff yoff)
     (when (:draw-bones @config)
