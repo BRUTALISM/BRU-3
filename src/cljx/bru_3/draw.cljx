@@ -36,7 +36,10 @@
                    :distortion-yresolution 4
 
                    ;; presentation
-                   :stroke-weight 2
+                   :background-color [40 140 250]
+                   :stroke-color [255]
+                   :fill-color [26]
+                   :stroke-weight 1.5
                    :dot-size 5
                    :distortion-field-step 50
                    :draw-bones false
@@ -44,7 +47,7 @@
                    :draw-wings true
                    :draw-fault false
                    :draw-distortion false
-                   :outline-only false
+                   :outline-only true
                    :two-phase-shapes false
                    :bottom-margin 20}))
 
@@ -192,9 +195,9 @@
         outs (outliers flat-wings mid)
         xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
         yoff (- (- (q/height) (:bottom-margin @config)) (:y (:bottom outs)))]
-    (q/background 40 140 250)
-    (q/fill 0)
-    (q/stroke 255)
+    (apply q/background (:background-color @config))
+    (apply q/fill (:fill-color @config))
+    (apply q/stroke (:stroke-color @config))
     (q/stroke-weight (:stroke-weight @config))
     (q/push-matrix)
     (q/translate xoff yoff)

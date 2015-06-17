@@ -1,12 +1,16 @@
 body {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  font-family: 'Fira Mono', 'Courier New', 'Menlo', 'Source Code Pro', monospace;
-  font-size: 11pt;
+  margin: 0px;
+  font-family: 'Source Code Pro', 'Fira Mono', 'Courier New', 'Menlo', 'Source Code Pro', monospace;
+  font-size: 12pt;
   font-weight: normal;
-  background-color: #288CFA;
   color: #FFF;
+  background-color: #1A1A1A;
+  text-align: center;
+}
+
+#canvas_holder {
+    background-color: #288CFA;
+    width: 100%;
 }
 
 canvas {
@@ -21,18 +25,23 @@ canvas {
   user-select: none;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  /*width: 1200px;*/
 }
 
-#desc {
-  text-align: center;
+#description {
+  text-align: left;
   vertical-align: top;
   margin-left: auto;
   margin-right: auto;
+  min-width: 200pt;
   width: 50%;
+  max-width: 500pt;
 }
 
 h1 {
-  margin: 0px;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
   font-size: 24pt;
   font-weight: normal;
 }
@@ -48,13 +57,13 @@ a:link, a:visited, a:active {
 }
 
 a:hover {
-    color: #333;
+    color: #999;
 }
 
 footer {
   position: fixed;
   bottom: 0px;
-  width: 1200px;
+  width: 100%;
   text-align: center;
   margin-bottom: 10pt;
 }
