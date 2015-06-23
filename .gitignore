@@ -12,3 +12,11 @@ pom.xml.asc
 /.nrepl-port
 /.idea
 .DS_Store
+
+/web/js/bru_3
+/web/js/cljs
+/web/js/clojure
+/web/js/constants_table.js
+/web/js/logo.js
+/web/js/quil
+/web/js/thi
