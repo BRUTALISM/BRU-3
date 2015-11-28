@@ -6,7 +6,7 @@
 (q/defsketch bru-3
   :host "bru-3"
   :title "BRU-3"
-  :size [1200 300]
+  :size [1200 210]
   :setup d/setup
   :update d/update
   :draw d/draw

@@ -36,7 +36,7 @@
                    :distortion-yresolution 4
 
                    ;; presentation
-                   :background-color [40 140 250]
+                   :background-color [7 7 7]
                    :stroke-color [255]
                    :fill-color [26]
                    :stroke-weight 1.5
