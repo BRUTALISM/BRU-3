@@ -36,7 +36,7 @@
                    :distortion-yresolution 4
 
                    ;; presentation
-                   :background-color [7 7 7]
+                   :background-color [0 0 0 0]
                    :stroke-color [255]
                    :fill-color [26]
                    :stroke-weight 1.5
@@ -49,7 +49,8 @@
                    :draw-distortion false
                    :outline-only true
                    :two-phase-shapes false
-                   :bottom-margin 20}))
+                   :bottom-margin 20
+                   :left-margin 2}))
 
 (defn flip [k]
   (let [v (not (k @config))]
@@ -193,7 +194,8 @@
         flat-wings (reduce into [] wings)
         mid (v/vec2 (/ (q/width) 2) (/ (q/height) 2))
         outs (outliers flat-wings mid)
-        xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
+        ;xoff (- (/ (q/width) 2) (/ (+ (:x (:right outs)) (:x (:left outs))) 2))
+        xoff (- (:left-margin @config) (:x (:left outs)))
         yoff (- (- (q/height) (:bottom-margin @config)) (:y (:bottom outs)))]
     (apply q/background (:background-color @config))
     (apply q/fill (:fill-color @config))

@@ -4,39 +4,17 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :dependencies [[org.clojure/clojure "1.7.0-beta2"]
-                 [org.clojure/clojurescript "0.0-3196"]
-                 [lein-light-nrepl "0.1.0"]
-                 [quil "2.2.5" :exclusions [org.clojure/clojure]]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.293"]
+                 [quil "2.5.0"]
                  [thi.ng/geom "0.0.743"]]
-
-  :source-paths ["src/clj"]
-
-  :main bru-3.main
-
-  :profiles {:dev {:plugins [[com.keminglabs/cljx "0.6.0"]
-                             [lein-cljsbuild "1.0.5"]]}}
-
+  :plugins [[lein-cljsbuild "1.1.4"]]
   :hooks [leiningen.cljsbuild]
 
-  :auto-clean false
-  :cljx {:builds [{:source-paths ["src/cljx"]
-                   :output-path "target/classes"
-                   :rules :clj}
-
-                  {:source-paths ["src/cljx"]
-                   :output-path "target/classes"
-                   :rules :cljs}]}
-
   :cljsbuild {:builds
-              [{:source-paths ["target/classes" "src/cljs"]
+              [{:source-paths ["src"]
                 :compiler {:output-to "web/js/logo.js"
-                           :output-dir "web/js"
+                           :output-dir "out"
                            :main "bru-3.logo"
                            :optimizations :advanced
-                           :pretty-print true}}]}
-
-  :prep-tasks [["cljx" "once"] "javac" "compile"]
-
-  :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]
-                 :timeout 120000})
+                           :pretty-print true}}]})
